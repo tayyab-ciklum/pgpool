@@ -1,5 +1,6 @@
-from templates import app
+from templates import app, PgPoolDb
 
-#Load this config object for development mode
+
 app.config.from_object('configurations.DevelopmentConfig')
+PgPoolDb.create_connection()
 app.run()

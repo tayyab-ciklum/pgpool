@@ -1,15 +1,19 @@
-class BaseCongig(object):
-	'''
+class BaseConfig(object):
+	"""
 	Base config class
-	'''
+	"""
 	DEBUG = True
 	TESTING = False
-class ProductionConfig(BaseCongig):
+
+
+class ProductionConfig(BaseConfig):
 	"""
 	Production specific config
 	"""
 	DEBUG = False
-class DevelopmentConfig(BaseCongig):
+
+
+class DevelopmentConfig(BaseConfig):
 	"""
 	Development environment specific configuration
 	"""
