@@ -1,6 +1,7 @@
-from templates import app, PgPoolDb
+# -*- encoding: utf-8 -*-
+# -*- encoding: utf-8 -*-
+from app import create_app
+application = create_app()
 
-
-app.config.from_object('configurations.DevelopmentConfig')
-PgPoolDb.create_connection()
-app.run()
+if __name__ == "__main__":
+    create_app().run()
