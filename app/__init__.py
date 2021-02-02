@@ -1,59 +1,60 @@
 # -*- encoding: utf-8 -*-
-from flask import Flask, render_template
+from app.config import Config, ConfigDb
+# import from packages
+from flask import Flask
 from flask_restful import Api
-from .config import DevelopmentConfig
-from .extensions import db
+from flask_migrate import Migrate
+# imports from manually created files
+from .views import home_blueprint
+from app.resources import CreateClusterResource, NodeListResource, NodeResource, ClusterResource, ClusterNodeListResource
+from app.extensions import db, ma
+from app.caching import cache
 
-# For import *
-__all__ = ['create_app']
+
+__all__ = ['create_app', ]
 
 
 def create_app():
     """
     Create a Flask app.
     """
+    app = Flask(__name__, static_folder='templates/public', template_folder="templates/static")
+    app.config.from_object(Config)
+    app.config.from_object(ConfigDb)
 
-    app = Flask(
-        __name__,
-        static_folder='templates/public',
-        template_folder="templates/static"
-    )
-    configure_app(app, config)
     configure_hook(app)
-    configure_blueprints(app)
     configure_extensions(app)
+    configure_blueprints(app)
+    configure_apis(app)
     configure_logging(app)
 
     return app
 
 
-def configure_app(app, config=None):
-    """Different ways of configurations."""
-    # Configuration of application, see configuration.py, choose one and uncomment.
-    app.config.from_object(DevelopmentConfig)
-    # app.config.from_object(ProductionConfig)
-    # app.config.from_object(TestingConfig)
-
-    if config:
-        app.config.from_object(config)
-
-
-def configure_extensions(app):
+def configure_extensions(app: Flask):
     db.init_app(app)
+    cache.init_app(app)
+    Migrate(app, db)
 
 
-def configure_blueprints(app):
+def configure_blueprints(app: Flask):
     """Configure blueprints in views."""
-    from .api import home_blueprint, errors_blueprint, ConfigResource
     app.register_blueprint(home_blueprint)
-    app.register_blueprint(errors_blueprint)
 
+
+def configure_apis(app: Flask):
+    """Configure api resources."""
     api = Api(app)
 
-    api.add_resource(ConfigResource, '/api/configs')
+    api.add_resource(CreateClusterResource, '/cluster')
+    api.add_resource(ClusterResource, '/cluster/<int:id>')
+    api.add_resource(ClusterNodeListResource, '/cluster/<int:id>/nodes')
+
+    api.add_resource(NodeListResource, '/nodes')
+    api.add_resource(NodeResource, '/nodes/<int:id>')
 
 
-def configure_logging(app):
+def configure_logging(app: Flask):
     """Configure file(info) and email(error) logging."""
 
     if app.debug or app.testing:
@@ -83,25 +84,12 @@ def configure_logging(app):
     #app.logger.error("testing error.")
 
 
-def configure_hook(app):
+def configure_hook(app: Flask):
     @app.before_first_request
     def create_tables():
         db.create_all()
 
     @app.before_request
     def before_request():
+        """ To do """
         pass
-
-
-def configure_error_handlers(app):
-    @app.errorhandler(404)
-    def page_not_found(error):
-        return render_template("errors/404.html"), 404
-
-
-def configure_cli(app):
-
-    @app.cli.command()
-    def initdb():
-        db.drop_all()
-        db.create_all()
