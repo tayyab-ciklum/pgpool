@@ -1,7 +1,6 @@
 from flask import render_template, Response, Blueprint
-from marshmallow import ValidationError
-
 from http import HTTPStatus
+
 home_blueprint = Blueprint('home', __name__)
 
 

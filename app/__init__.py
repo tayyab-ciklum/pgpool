@@ -2,11 +2,10 @@
 from app.config import Config, ConfigDb
 # import from packages
 from flask import Flask
-from flask_restful import Api
 from flask_migrate import Migrate
+from flasgger import Swagger
 # imports from manually created files
-from .views import home_blueprint
-from app.resources import CreateClusterResource, NodeListResource, NodeResource, ClusterResource, ClusterNodeListResource
+from app.views import home_blueprint, api_cluster, api_node
 from app.extensions import db, ma
 from app.caching import cache
 
@@ -21,11 +20,13 @@ def create_app():
     app = Flask(__name__, static_folder='templates/public', template_folder="templates/static")
     app.config.from_object(Config)
     app.config.from_object(ConfigDb)
+    app.config['SWAGGER'] = {
+        'title': 'PgPool API',
+    }
 
     configure_hook(app)
     configure_extensions(app)
     configure_blueprints(app)
-    configure_apis(app)
     configure_logging(app)
 
     return app
@@ -35,23 +36,21 @@ def configure_extensions(app: Flask):
     db.init_app(app)
     cache.init_app(app)
     Migrate(app, db)
+    Swagger(app)
 
 
 def configure_blueprints(app: Flask):
     """Configure blueprints in views."""
+
+    # '/cluster'
+    # '/cluster/<int:id>'
+    # '/cluster/<int:id>/nodes'
+    # '/nodes'
+    # 'nodes/<int:id>'
+
     app.register_blueprint(home_blueprint)
-
-
-def configure_apis(app: Flask):
-    """Configure api resources."""
-    api = Api(app)
-
-    api.add_resource(CreateClusterResource, '/cluster')
-    api.add_resource(ClusterResource, '/cluster/<int:id>')
-    api.add_resource(ClusterNodeListResource, '/cluster/<int:id>/nodes')
-
-    api.add_resource(NodeListResource, '/nodes')
-    api.add_resource(NodeResource, '/nodes/<int:id>')
+    app.register_blueprint(api_cluster)
+    app.register_blueprint(api_node)
 
 
 def configure_logging(app: Flask):
