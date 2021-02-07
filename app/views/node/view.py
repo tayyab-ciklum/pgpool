@@ -50,7 +50,7 @@ def add_node():
     return node_schema.dump(node), HTTPStatus.CREATED
 
 
-@api_node.route('/cluster/<int:id>', methods=['DELETE'])
+@api_node.route('/node/<int:id>', methods=['DELETE'])
 def delete_node(id):
     node = Node.query.filter_by(id=id).first_or_404()
     if not node:
