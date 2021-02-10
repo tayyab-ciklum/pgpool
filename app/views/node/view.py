@@ -33,6 +33,8 @@ def get_nodes(id=None):
         nodes = nodes_schema.dump(nodes)
     if nodes:
         return jsonify(nodes), HTTPStatus.OK
+    else:
+        return jsonify({}), HTTPStatus.OK
 
 
 @api_node.route('/node', methods=['POST'])

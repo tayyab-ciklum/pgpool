@@ -6,6 +6,7 @@ from app.schemas import ClusterSchema, NodePaginationSchema
 from sqlalchemy.exc import IntegrityError
 from flask import Blueprint, jsonify
 from flasgger import swag_from
+from app.extensions import db
 
 cluster_schema = ClusterSchema()
 node_pagination_schema = NodePaginationSchema()
@@ -32,9 +33,10 @@ def get_clusters(id=None):
     else:
         artists = Cluster.query.all()
         artists = artists_schema.dump(artists)
-    print(artists)
     if artists:
         return jsonify(artists), HTTPStatus.OK
+    else:
+        return jsonify({}), HTTPStatus.OK
 
 
 @api_cluster.route('/cluster', methods=['POST'])
@@ -50,6 +52,26 @@ def add_cluster():
     except IntegrityError as error:
         return error._message(IndentationError), HTTPStatus.INTERNAL_SERVER_ERROR
     return cluster_schema.dump(cluster), HTTPStatus.CREATED
+
+
+@api_cluster.route('/cluster/<int:id>', methods=['PUT'])
+def update_cluster(id):
+    data = request.get_json()
+    if not data:
+        return jsonify({'message': 'Invalid request'}), 400
+
+    cluster = Cluster.query.filter_by(id=id).first_or_404()
+    if not cluster:
+        return {'message': 'cluster #' + str(id) + ' not found'}, HTTPStatus.NOT_FOUND
+
+    try:
+        data, errors = cluster_schema.load(cluster_schema.dump(cluster), partial=True)
+        if errors:
+            return jsonify(errors), 422
+        cluster.save()
+        return jsonify(), 200
+    except Exception as exception:
+        return str(exception), HTTPStatus.BAD_REQUEST
 
 
 @api_cluster.route('/cluster/<int:id>', methods=['DELETE'])

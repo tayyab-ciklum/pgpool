@@ -43,6 +43,11 @@ class Cluster(db.Model):
     def find_all(cls) -> List["Cluster"]:
         return cls.query.all()
 
+    def update(self, data):
+        for k, v in data.items():
+            setattr(self, k, v)
+        return self
+
     def save(self) -> None:
         db.session.add(self)
         db.session.commit()
