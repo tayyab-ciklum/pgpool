@@ -6,7 +6,7 @@ from app.schemas import ClusterSchema, NodePaginationSchema
 from sqlalchemy.exc import IntegrityError
 from flask import Blueprint, jsonify
 from flasgger import swag_from
-from app.extensions import db
+from app.caching import cache, clear_cache
 
 cluster_schema = ClusterSchema()
 node_pagination_schema = NodePaginationSchema()
@@ -40,6 +40,14 @@ def get_clusters(id=None):
 
 
 @api_cluster.route('/cluster', methods=['POST'])
+@swag_from({
+    'responses': {
+        HTTPStatus.OK.value: {
+            'description': 'PgPool Cluster Schema',
+            'schema': ClusterSchema
+        }
+    }
+})
 def add_cluster():
     json_data = request.get_json()
     try:
@@ -55,26 +63,40 @@ def add_cluster():
 
 
 @api_cluster.route('/cluster/<int:id>', methods=['PUT'])
+@swag_from({
+    'responses': {
+        HTTPStatus.OK.value: {
+            'description': 'PgPool Cluster Schema',
+            'schema': ClusterSchema
+        }
+    }
+})
 def update_cluster(id):
-    data = request.get_json()
-    if not data:
-        return jsonify({'message': 'Invalid request'}), 400
+    json_data = request.get_json()
+    try:
+        data = cluster_schema.load(data=json_data, partial=True)
+    except ValidationError as exc:
+        return {'message': 'validation error', 'errors': exc}, HTTPStatus.BAD_REQUEST
 
     cluster = Cluster.query.filter_by(id=id).first_or_404()
-    if not cluster:
+    if cluster is None:
         return {'message': 'cluster #' + str(id) + ' not found'}, HTTPStatus.NOT_FOUND
 
-    try:
-        data, errors = cluster_schema.load(cluster_schema.dump(cluster), partial=True)
-        if errors:
-            return jsonify(errors), 422
-        cluster.save()
-        return jsonify(), 200
-    except Exception as exception:
-        return str(exception), HTTPStatus.BAD_REQUEST
+    cluster.update(data)
+    cluster.save()
+    clear_cache('/cluster')
+    return cluster_schema.dump(cluster), HTTPStatus.OK
 
 
 @api_cluster.route('/cluster/<int:id>', methods=['DELETE'])
+@swag_from({
+    'responses': {
+        HTTPStatus.OK.value: {
+            'description': 'PgPool Cluster Schema',
+            'schema': ClusterSchema
+        }
+    }
+})
 def delete_cluster(id):
     cluster = Cluster.query.filter_by(id=id).first_or_404()
     if not cluster:
