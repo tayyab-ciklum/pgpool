@@ -1,26 +1,18 @@
 import os
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 
 class Config(object):
-    """
-    Configuration base, for all environments.
-    """
+    SECRET_KEY = os.getenv('SECRET_KEY') or 'super-secret-key'
     DEBUG = True
-    TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///application.db'
+    CSRF_ENABLED = True
+    CACHE_TYPE = 'simple'
+    CACHE_DEFAULT_TIMEOUT = 10 * 60
+    JSON_SORT_KEYS = False
+
+
+class ConfigDb(Config):
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", 'sqlite:///' + os.path.join(basedir, 'PgPool.db'))
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = "MINHACHAVESECRETA"
-    PROJECT = "pgpool"
-    PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
-
-class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///application.db'
-
-
-class DevelopmentConfig(Config):
-    DEBUG = True
-
-
-class TestingConfig(Config):
-    TESTING = True
