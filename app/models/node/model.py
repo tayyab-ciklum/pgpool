@@ -125,6 +125,11 @@ class Node(db.Model):
     def data(self):
         return {'id': self.id, 'body': self.body, 'cluster_id': self.cluster_id}
 
+    def update(self, data):
+        for k, v in data.items():
+            setattr(self, k, v)
+        return self
+
     def save(self) -> None:
         db.session.add(self)
         db.session.commit()
