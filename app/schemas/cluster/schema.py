@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, validate, post_dump
+from marshmallow import Schema, fields, validate, post_dump, validates_schema, ValidationError
 from ..node.schema import NodeSchema
 
 
@@ -20,9 +20,14 @@ class ClusterSchema(Schema):
     language = fields.String(data_key='language', required=True)
     created_at = fields.DateTime(data_key='createdAt', dump_only=True)
     updated_at = fields.DateTime(data_key='updatedAt', dump_only=True)
-    nodes = fields.Nested(NodeSchema, many=True)
+    nodes = fields.Nested(NodeSchema, attribute='nodes', dump_only=True, many=True, exlude=['cluster_id'])
 
     class Meta:
         ordered = True
         load_instance = True
         include_fk = True
+
+    @validates_schema
+    def validate_trigger(self, data):
+        if data.get('shutdown_mode').lower() not in ['smart', 'fast', 'immediate']:
+            raise ValidationError('Invalid shutdown mode')

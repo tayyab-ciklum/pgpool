@@ -25,6 +25,7 @@ api_node = Blueprint('api_node', __name__, url_prefix="/api/v1")
         }
     }
 })
+@cache.cached(timeout=60, query_string=True)
 def get_nodes(id=None):
     if id:
         nodes = Node.query.filter_by(id=id).first_or_404()
@@ -58,6 +59,7 @@ def add_node():
         node.save()
     except IntegrityError as error:
         return error._message(IndentationError), HTTPStatus.INTERNAL_SERVER_ERROR
+    clear_cache('/node')
     return node_schema.dump(node), HTTPStatus.CREATED
 
 
@@ -101,5 +103,5 @@ def delete_node(id):
     if not node:
         return {'message': 'node #' + str(id) + ' not found'}, HTTPStatus.NOT_FOUND
     node.delete()
-
+    clear_cache('/node')
     return {}, HTTPStatus.NO_CONTENT
