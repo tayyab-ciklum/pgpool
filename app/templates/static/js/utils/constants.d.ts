@@ -9,3 +9,7 @@ export declare const RouteNames: {
         path: string;
     };
 };
+export declare const dropDownsData: {
+    key: string;
+    value: string[];
+}[];

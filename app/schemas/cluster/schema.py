@@ -27,7 +27,7 @@ class ClusterSchema(Schema):
         load_instance = True
         include_fk = True
 
-    @validates_schema
-    def validate_trigger(self, data):
-        if data.get('shutdown_mode').lower() not in ['smart', 'fast', 'immediate']:
-            raise ValidationError('Invalid shutdown mode')
+    # @validates_schema
+    # def validate_trigger(self, data):
+    #     if data.get('shutdown_mode').lower() not in ['smart', 'fast', 'immediate']:
+    #         raise ValidationError('Invalid shutdown mode')

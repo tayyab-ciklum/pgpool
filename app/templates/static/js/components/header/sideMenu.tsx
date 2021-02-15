@@ -13,7 +13,7 @@ const menu = (
 const SideMenu = (): JSX.Element => {
     return (
     <Dropdown overlay={menu} placement="topRight">
-    <Button type='text' style={{float:"right", top: '20%', right:'4%'}} onClick={e => e.preventDefault()}>
+    <Button type='text' style={{float:"right", top: '20%', right:'4%', color: 'ffffff'}} onClick={e => e.preventDefault()}>
       Postgres Account <DownOutlined />
     </Button>
   </Dropdown>
