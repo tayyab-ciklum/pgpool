@@ -4,6 +4,15 @@ export declare const ActionTypes: {
         USER_REQUEST_SUCCESS: string;
         USER_REQUEST_FAILURE: string;
     };
+    ADMIN_ACTIONS: {
+        REQUEST_ERROR: string;
+        SET_CONFIG: string;
+        SET_CONFIG_SUCCESS: string;
+        GET_CLUSTERS: string;
+        SET_CLUSTERS: string;
+        UPDATE_CONFIG: string;
+        RESET_REQUEST_STATE: string;
+    };
 };
 export declare const getUser: (userId: string) => unknown;
 export declare const getUserSuccess: (user: unknown) => {
@@ -17,4 +26,24 @@ export declare const getUserFailure: (user: unknown) => {
     payload: {
         user: unknown;
     };
+};
+export declare const setConfig: (config: unknown) => unknown;
+export declare const requestError: (error: string) => {
+    type: string;
+    payload: string;
+};
+export declare const getClusters: () => {
+    type: string;
+};
+export declare const setClusters: (clusters: unknown) => {
+    type: string;
+    payload: unknown;
+};
+export declare const updateConfig: (config: unknown, id: string) => unknown;
+export declare const setConfigSuccess: (cluster: unknown) => {
+    type: string;
+    payload: unknown;
+};
+export declare const resetRequestState: () => {
+    type: string;
 };

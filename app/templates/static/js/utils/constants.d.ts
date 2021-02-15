@@ -8,4 +8,12 @@ export declare const RouteNames: {
     AdminSettings: {
         path: string;
     };
+    Clusters: {
+        path: string;
+    };
 };
+export declare const dropDownsData: {
+    key: string;
+    value: string[];
+}[];
+export declare const DATE_FORMAT = "DD-MMM-YY";

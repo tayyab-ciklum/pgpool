@@ -5,9 +5,9 @@ import { UserOutlined } from "@ant-design/icons";
 const { Header } = Layout;
 const AppHeader = (): JSX.Element => {
     return (
-        <Header className="site-layout-background" style={{ padding: 0 }}>
+        <Header style={{ padding: 0 }}>
         <Space direction='horizontal' style={{float:'right', marginTop:'14px'}}>
-        <Avatar size={35} icon={<UserOutlined />}  style={{background:'#002140'}}/>
+        <Avatar size={35} icon={<UserOutlined />}  style={{background: "#fffff"}}/>
         <SideMenu/>
         </Space>
         </Header>

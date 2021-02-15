@@ -5707,23 +5707,8 @@
         "affectsGlobalScope": false
       },
       "./js/utils/constants.tsx": {
-        "version": "8d8bbf7d4ecc4bcc9c24d9c762d125bdf07139dedd5e8639dfa8824b6f15be5f",
-        "signature": "279680f7765e8b1c6b444be487914e9059f2e0cc9a03564497511f2bef60ca2a",
-        "affectsGlobalScope": false
-      },
-      "./js/components/menu/index.tsx": {
-        "version": "35fb2d2080c3460501c882df5f2f3a7f9554d342b7655e62ddee13c64d0cc4ca",
-        "signature": "8c13099a9a504e84c53a3a9868e53ca92de4aa5c0b047a7ced139d05d28c3d44",
-        "affectsGlobalScope": false
-      },
-      "./js/components/header/sideMenu.tsx": {
-        "version": "f2233048c95e00edb96edcb15a2f473b3c12ab99f631730ab8058ef35ed0f221",
-        "signature": "168802a670776d97a832b76a1d4b25ce53002e3116b8bc68db93f12205a4fc41",
-        "affectsGlobalScope": false
-      },
-      "./js/components/header/index.tsx": {
-        "version": "406bc7a3558c38c336bde07e0aebd30efd764c6ba4b4ace63dd7353e4a5c25dd",
-        "signature": "5c71f1d4f396309f657f76e014fa59f522ccf67c517b7280c2b930c08f3e7de7",
+        "version": "6dde77ed4641f8bba82ba504b112130cc7310aa1806cb0e20118e428e145b49a",
+        "signature": "1f6d3184d09278bfbf8678fd7d96da935357e2ea9f06278eea212168ee55d52c",
         "affectsGlobalScope": false
       },
       "./node_modules/symbol-observable/index.d.ts": {
@@ -5747,8 +5732,33 @@
         "affectsGlobalScope": false
       },
       "./js/redux-sagas/app.action.tsx": {
-        "version": "c8d16f8560f022c0b2d6bb2109b6706a710adacc9d6f022736f1ea1c71993c2a",
-        "signature": "fb34fa5d40dba981413f48eeaac40f6f47680e4fc426401609f3cef0411fd5ee",
+        "version": "26edddb79db267af48acca8fcc08d8d5ba6363e75dec2bc6a4f7e8d099b02755",
+        "signature": "e431f6ef4536610d1b72a2332d5d99233b2bf074eeef8568e783b1333195bb84",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/reselect/lib/index.d.ts": {
+        "version": "da7001dfd188e468782cbc0f742fdc397787b8b669d51b421fd885401dc16f48",
+        "signature": "da7001dfd188e468782cbc0f742fdc397787b8b669d51b421fd885401dc16f48",
+        "affectsGlobalScope": false
+      },
+      "./js/redux-sagas/app.selector.tsx": {
+        "version": "43fe0ea3a3d98b7988b41a4731eee7443f8985134683cd106b36b702c84bd2dd",
+        "signature": "d8a55498b0013f16af2eabc38db6efbd38824f51d4b374e0fe078aa27288d317",
+        "affectsGlobalScope": false
+      },
+      "./js/components/menu/index.tsx": {
+        "version": "4d831aec1ae7d935900d288a647271a7998cedb319f6fb07b399ea38bcdcf70a",
+        "signature": "8c13099a9a504e84c53a3a9868e53ca92de4aa5c0b047a7ced139d05d28c3d44",
+        "affectsGlobalScope": false
+      },
+      "./js/components/header/sideMenu.tsx": {
+        "version": "5a76dd69a52e1bd64ca4310a55b87840fae3aff1afdd37d67dbc9fe4f59886c4",
+        "signature": "168802a670776d97a832b76a1d4b25ce53002e3116b8bc68db93f12205a4fc41",
+        "affectsGlobalScope": false
+      },
+      "./js/components/header/index.tsx": {
+        "version": "2a806ff8ccec28ebfdb293f99ae2948e2dbbbfff228d972c1ca573fdecc02838",
+        "signature": "5c71f1d4f396309f657f76e014fa59f522ccf67c517b7280c2b930c08f3e7de7",
         "affectsGlobalScope": false
       },
       "./js/views/sample-view/index.tsx": {
@@ -5757,32 +5767,42 @@
         "affectsGlobalScope": false
       },
       "./js/views/dashboard/index.tsx": {
-        "version": "76cb9aae4fd06fba5fd6da77cde76bf575aeb67a4673fb857eb759adade071e2",
+        "version": "5cd0ee6bcb3cbc70837c07dee46d2be6574fc989c2682d76a9b509b707ba8512",
         "signature": "56ee0f96096b60f542b60837fbe613aea83608ddf5125656ed8dd5eb9d28b9c9",
         "affectsGlobalScope": false
       },
       "./js/views/admin-settings/index.tsx": {
-        "version": "d62cb86111b238590cdf3a76ab6dab0a1464203bce64fbc22a3c271bc8947777",
+        "version": "a53c0867a7bd68ff2842810c61f142140a4aaa508c28267abff92fc4c9a2065b",
         "signature": "9935996f68d81b04db462d763514fc772dad535205e441f744daa1ae8a6a2042",
         "affectsGlobalScope": false
       },
+      "./js/views/clusters/index.tsx": {
+        "version": "a0145b5e2f8172930118ca8b3073b40df8bf29758958e19050f4cf214d3ae6e6",
+        "signature": "56f3df598058d4a7bfbc38488772bdc68320a513ce42f510640c539154eb3100",
+        "affectsGlobalScope": false
+      },
       "./js/routes/route-list.tsx": {
-        "version": "231c7fb4c162f0e2bf908fdfc06c188a3806837bbf7d945170a5563b4643091d",
-        "signature": "e83ed473c6fd25637ff916e88aeeefc569d7e11ebcc7450abc5c9acf20d27f8d",
+        "version": "60b65001681dc9e3d185bb934fdbe057054c85ab27e50437c442307ade664ab2",
+        "signature": "0344bfe28ce2df60d602469a108cf5bcd2ee4650b2362e5b8fd4d11972db8576",
         "affectsGlobalScope": false
       },
       "./js/routes/index.tsx": {
-        "version": "00e4a3380609d5866e8349e10a6d461e50b4607b1667f440eb49f31776818c7b",
+        "version": "11d3c5d96b60d2f6fca2b26a9eb3176c10dca3ae109632acb2c2033ee5f95ba8",
         "signature": "7eea58f54956d564c25084d8819dd33cafee4a7b823194cd1613a9c2b2d12171",
         "affectsGlobalScope": false
       },
+      "./js/components/popup/index.tsx": {
+        "version": "0a98b9da433cdabaf13cf0c9d7a496e3ddd5b5ca0f2102064b88a0dbdeec7386",
+        "signature": "547d11910fe7448fdf29be0da5544d54f3dc34bf601979691ea6dfe5aff78ddc",
+        "affectsGlobalScope": false
+      },
       "./js/components/content/index.tsx": {
-        "version": "ab69549f43d5aea7394ecef547150d40d2ff1ab67a91def5876c212970199c01",
+        "version": "8cc3bb5a83ef9fcd87d7f78ee6279dc816b0371c7cdc84704fa1041b1a0e93d4",
         "signature": "1ca6214be2a71a40ed5693a1b9dd19db3c3e98a90a855159ba8d0b1932d6f3f4",
         "affectsGlobalScope": false
       },
       "./js/App.tsx": {
-        "version": "77620adfcf6865da38bfd28882f1435cdbf87a461a91cffb9e65a1881f549ce6",
+        "version": "1b099da8b7094a23ea78feb0891e74d052befd85184ca8feb88940cd170e02e8",
         "signature": "d89dc7c86836cb294da41c3dd08cfe27a05c4850435d9c4875cd96bb8e596c60",
         "affectsGlobalScope": false
       },
@@ -5847,7 +5867,7 @@
         "affectsGlobalScope": false
       },
       "./js/redux-sagas/app.reducer.tsx": {
-        "version": "5c1d860e5aba895aed610866c61e5a162a2d06978fe3b8552d07cf1fe7bd72af",
+        "version": "e6a1880419e783539a3400e3712ea3482c97361e2073d11a520ee339cec8e1e1",
         "signature": "e768bd9de32fd9c11a4b94e1fe8303b28cd9d28b91da984d7c718dc9a47e3c8c",
         "affectsGlobalScope": false
       },
@@ -5867,8 +5887,13 @@
         "affectsGlobalScope": false
       },
       "./js/config/urls.tsx": {
-        "version": "2e498d7ceb44ecc56f9d2e9dcf290c5c0fe60593c74dbc982b045fbbd9bf25e8",
-        "signature": "bc267e250e847f8ba64105d825f0bfd71e280d5f642694d7e6f1e1796f0c8b1c",
+        "version": "bf1c8a2b4827a7744d3e9e306750105c131af8927273eeb4217a76c2490d2934",
+        "signature": "7635d5088818e42ca089e7b8ff6b59a76c0928009b5ce13713e792cd2b2d50df",
+        "affectsGlobalScope": false
+      },
+      "./js/services/admin.tsx": {
+        "version": "8ebc6a82b026feef3d37b4f783f7eb2bcdaaedae697464fa2dbec98146db405c",
+        "signature": "66b7e3039feb0ad7ef92d958d407e511a1484168c85b58b1cb646b0af8d974a0",
         "affectsGlobalScope": false
       },
       "./js/services/user.tsx": {
@@ -5882,7 +5907,7 @@
         "affectsGlobalScope": false
       },
       "./js/redux-sagas/app.saga.tsx": {
-        "version": "dd65809c2f0c7fd20ab14030cdb23d504aa613c6a1d2f2fdf92ecc6fbe28cf99",
+        "version": "0c241537198743f23498be1fd66d3dba3a44a3e508c39a1fb288be6f4ef481fa",
         "signature": "2088d24c825974e70704e5044a69d0a0eadf57518d5a6a2eb5d816f0f8011ce4",
         "affectsGlobalScope": false
       },
@@ -6499,7 +6524,10 @@
         "./node_modules/antd/lib/index.d.ts"
       ],
       "./js/components/content/index.tsx": [
+        "./js/components/popup/index.tsx",
+        "./js/redux-sagas/app.selector.tsx",
         "./js/routes/index.tsx",
+        "./node_modules/@types/react-redux/index.d.ts",
         "./node_modules/@types/react/index.d.ts",
         "./node_modules/antd/lib/index.d.ts"
       ],
@@ -6515,10 +6543,16 @@
         "./node_modules/antd/lib/index.d.ts"
       ],
       "./js/components/menu/index.tsx": [
+        "./js/redux-sagas/app.action.tsx",
+        "./js/redux-sagas/app.selector.tsx",
         "./js/utils/constants.tsx",
         "./node_modules/@ant-design/icons/lib/index.d.ts",
+        "./node_modules/@types/react-redux/index.d.ts",
         "./node_modules/@types/react-router-dom/index.d.ts",
         "./node_modules/@types/react/index.d.ts",
+        "./node_modules/antd/lib/index.d.ts"
+      ],
+      "./js/components/popup/index.tsx": [
         "./node_modules/antd/lib/index.d.ts"
       ],
       "./js/config/request.tsx": [
@@ -6545,8 +6579,12 @@
       ],
       "./js/redux-sagas/app.saga.tsx": [
         "./js/redux-sagas/app.action.tsx",
+        "./js/services/admin.tsx",
         "./js/services/user.tsx",
         "./node_modules/redux-saga/effects.d.ts"
+      ],
+      "./js/redux-sagas/app.selector.tsx": [
+        "../../../node_modules/reselect/lib/index.d.ts"
       ],
       "./js/redux-sagas/app.store.tsx": [
         "./js/redux-sagas/app.reducer.tsx",
@@ -6566,22 +6604,39 @@
       "./js/routes/route-list.tsx": [
         "./js/utils/constants.tsx",
         "./js/views/admin-settings/index.tsx",
+        "./js/views/clusters/index.tsx",
         "./js/views/dashboard/index.tsx",
         "./js/views/sample-view/index.tsx",
         "./node_modules/@types/react/index.d.ts"
+      ],
+      "./js/services/admin.tsx": [
+        "./js/config/request.tsx",
+        "./js/config/urls.tsx"
       ],
       "./js/services/user.tsx": [
         "./js/config/request.tsx",
         "./js/config/urls.tsx"
       ],
       "./js/views/admin-settings/index.tsx": [
-        "./node_modules/@types/react/index.d.ts"
-      ],
-      "./js/views/dashboard/index.tsx": [
         "./js/redux-sagas/app.action.tsx",
+        "./js/redux-sagas/app.selector.tsx",
+        "./js/utils/constants.tsx",
         "./node_modules/@types/react-redux/index.d.ts",
         "./node_modules/@types/react/index.d.ts",
         "./node_modules/antd/lib/index.d.ts"
+      ],
+      "./js/views/clusters/index.tsx": [
+        "./js/redux-sagas/app.selector.tsx",
+        "./js/utils/constants.tsx",
+        "./node_modules/@ant-design/icons/lib/index.d.ts",
+        "./node_modules/@types/react-redux/index.d.ts",
+        "./node_modules/@types/react-router-dom/index.d.ts",
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/antd/lib/index.d.ts",
+        "./node_modules/moment/ts3.1-typings/moment.d.ts"
+      ],
+      "./js/views/dashboard/index.tsx": [
+        "./node_modules/@types/react/index.d.ts"
       ],
       "./js/views/sample-view/index.tsx": [
         "./js/redux-sagas/app.action.tsx",
@@ -12304,6 +12359,9 @@
       "./js/redux-sagas/app.saga.tsx": [
         "./node_modules/redux-saga/effects.d.ts"
       ],
+      "./js/redux-sagas/app.selector.tsx": [
+        "../../../node_modules/reselect/lib/index.d.ts"
+      ],
       "./js/redux-sagas/app.store.tsx": [
         "./js/utils/types.tsx",
         "./node_modules/redux/index.d.ts"
@@ -18023,6 +18081,7 @@
       "./js/components/header/index.tsx",
       "./js/components/header/sideMenu.tsx",
       "./js/components/menu/index.tsx",
+      "./js/components/popup/index.tsx",
       "./js/config/index.tsx",
       "./js/config/request.tsx",
       "./js/config/urls.tsx",
@@ -18031,15 +18090,31 @@
       "./js/redux-sagas/app.action.tsx",
       "./js/redux-sagas/app.reducer.tsx",
       "./js/redux-sagas/app.saga.tsx",
+      "./js/redux-sagas/app.selector.tsx",
       "./js/redux-sagas/app.store.tsx",
       "./js/reportWebVitals.ts",
       "./js/routes/index.tsx",
       "./js/routes/route-list.tsx",
+      "./js/services/admin.tsx",
       "./js/services/user.tsx",
       "./js/setupTests.ts",
       "./js/utils/constants.tsx",
       "./js/utils/types.tsx",
       "./js/views/admin-settings/index.tsx",
+      [
+        "./js/views/clusters/index.tsx",
+        [
+          {
+            "file": "./js/views/clusters/index.tsx",
+            "start": 1406,
+            "length": 6,
+            "messageText": "'record' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          }
+        ]
+      ],
       "./js/views/dashboard/index.tsx",
       "./js/views/sample-view/index.tsx",
       "./node_modules/@ant-design/icons-svg/lib/types.d.ts",
@@ -19307,7 +19382,8 @@
       "./node_modules/web-vitals/dist/getLCP.d.ts",
       "./node_modules/web-vitals/dist/getTTFB.d.ts",
       "./node_modules/web-vitals/dist/index.d.ts",
-      "./node_modules/web-vitals/dist/types.d.ts"
+      "./node_modules/web-vitals/dist/types.d.ts",
+      "../../../node_modules/reselect/lib/index.d.ts"
     ],
     "affectedFilesPendingEmit": [
       [
@@ -19319,7 +19395,59 @@
         0
       ],
       [
+        "./js/components/content/index.tsx",
+        0
+      ],
+      [
+        "./js/components/header/index.tsx",
+        0
+      ],
+      [
+        "./js/components/menu/index.tsx",
+        0
+      ],
+      [
         "./js/index.tsx",
+        0
+      ],
+      [
+        "./js/redux-sagas/app.reducer.tsx",
+        0
+      ],
+      [
+        "./js/redux-sagas/app.saga.tsx",
+        0
+      ],
+      [
+        "./js/redux-sagas/app.store.tsx",
+        0
+      ],
+      [
+        "./js/routes/index.tsx",
+        0
+      ],
+      [
+        "./js/routes/route-list.tsx",
+        0
+      ],
+      [
+        "./js/services/admin.tsx",
+        0
+      ],
+      [
+        "./js/services/user.tsx",
+        0
+      ],
+      [
+        "./js/views/admin-settings/index.tsx",
+        0
+      ],
+      [
+        "./js/views/dashboard/index.tsx",
+        0
+      ],
+      [
+        "./js/views/sample-view/index.tsx",
         0
       ]
     ]

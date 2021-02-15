@@ -36,7 +36,7 @@ def get_clusters(id=None):
     if artists:
         return jsonify(artists), HTTPStatus.OK
     else:
-        return jsonify({}), HTTPStatus.OK
+        return jsonify([]), HTTPStatus.OK
 
 
 @api_cluster.route('/cluster', methods=['POST'])

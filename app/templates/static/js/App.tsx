@@ -12,7 +12,7 @@ const App = (): JSX.Element => {
 
     return (
         <div id="content">
-            <Layout style={{ height: '100vh' }}>
+            <Layout style={{ height: '120vh' }}>
                 <AppMenu collapsed={collapsed} toggle={toggle} />
                 <Layout className="site-layout">
                     <AppHeader />
