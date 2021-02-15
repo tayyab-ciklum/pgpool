@@ -8,6 +8,9 @@ export const RouteNames = {
     AdminSettings: {
         path: '/admin-settings',
     },
+    Clusters: {
+        path: '/clusters',
+    },
 };
 export const dropDownsData: { key: string; value: string[] }[] = [
     {
@@ -19,3 +22,4 @@ export const dropDownsData: { key: string; value: string[] }[] = [
         value: ['English', 'French'],
     }
 ];
+export const DATE_FORMAT = 'DD-MMM-YY';

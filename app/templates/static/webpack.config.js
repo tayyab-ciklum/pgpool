@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const TerserPlugin = require('terser-webpack-plugin');
 const resolve = require('path').resolve;
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
@@ -33,6 +34,7 @@ const config = {
  },
  plugins: [
        new ForkTsCheckerWebpackPlugin(),
+       new TerserPlugin()
      ]
 };
 module.exports = config;

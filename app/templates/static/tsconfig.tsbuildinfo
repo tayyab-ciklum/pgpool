@@ -5707,8 +5707,8 @@
         "affectsGlobalScope": false
       },
       "./js/utils/constants.tsx": {
-        "version": "cf0289ef6867828d2873f0992f378b7d1dce20d5d221d5bc86d67ec04ab39e10",
-        "signature": "4fecd66fa03cc50eec53c491aa9c6c6e852285afa7f5e435afc9a9aa18817ec5",
+        "version": "6dde77ed4641f8bba82ba504b112130cc7310aa1806cb0e20118e428e145b49a",
+        "signature": "1f6d3184d09278bfbf8678fd7d96da935357e2ea9f06278eea212168ee55d52c",
         "affectsGlobalScope": false
       },
       "./node_modules/symbol-observable/index.d.ts": {
@@ -5747,7 +5747,7 @@
         "affectsGlobalScope": false
       },
       "./js/components/menu/index.tsx": {
-        "version": "9232a0bfd77c9a223cdd6152d9454e8a630cce3df5c89439db0d170b25499e70",
+        "version": "4d831aec1ae7d935900d288a647271a7998cedb319f6fb07b399ea38bcdcf70a",
         "signature": "8c13099a9a504e84c53a3a9868e53ca92de4aa5c0b047a7ced139d05d28c3d44",
         "affectsGlobalScope": false
       },
@@ -5776,13 +5776,18 @@
         "signature": "9935996f68d81b04db462d763514fc772dad535205e441f744daa1ae8a6a2042",
         "affectsGlobalScope": false
       },
+      "./js/views/clusters/index.tsx": {
+        "version": "a0145b5e2f8172930118ca8b3073b40df8bf29758958e19050f4cf214d3ae6e6",
+        "signature": "56f3df598058d4a7bfbc38488772bdc68320a513ce42f510640c539154eb3100",
+        "affectsGlobalScope": false
+      },
       "./js/routes/route-list.tsx": {
-        "version": "231c7fb4c162f0e2bf908fdfc06c188a3806837bbf7d945170a5563b4643091d",
-        "signature": "e83ed473c6fd25637ff916e88aeeefc569d7e11ebcc7450abc5c9acf20d27f8d",
+        "version": "60b65001681dc9e3d185bb934fdbe057054c85ab27e50437c442307ade664ab2",
+        "signature": "0344bfe28ce2df60d602469a108cf5bcd2ee4650b2362e5b8fd4d11972db8576",
         "affectsGlobalScope": false
       },
       "./js/routes/index.tsx": {
-        "version": "00e4a3380609d5866e8349e10a6d461e50b4607b1667f440eb49f31776818c7b",
+        "version": "11d3c5d96b60d2f6fca2b26a9eb3176c10dca3ae109632acb2c2033ee5f95ba8",
         "signature": "7eea58f54956d564c25084d8819dd33cafee4a7b823194cd1613a9c2b2d12171",
         "affectsGlobalScope": false
       },
@@ -6236,11 +6241,6 @@
         "signature": "a46d66851af2c056e805fdd574bf5ec3adb1181c43c5e41f0a1c592e338afe64",
         "affectsGlobalScope": false
       },
-      "./tsconfig.json": {
-        "version": "b1c42b1191720cbcc78b5755ff297e7693646a0505380bb8bb0442758254cdd3",
-        "signature": "27974652dfcc2802c1f65df525d7e2943768f08ace7a401cc536fdd95cc2c757",
-        "affectsGlobalScope": true
-      },
       "./node_modules/@types/anymatch/index.d.ts": {
         "version": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
         "signature": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
@@ -6604,6 +6604,7 @@
       "./js/routes/route-list.tsx": [
         "./js/utils/constants.tsx",
         "./js/views/admin-settings/index.tsx",
+        "./js/views/clusters/index.tsx",
         "./js/views/dashboard/index.tsx",
         "./js/views/sample-view/index.tsx",
         "./node_modules/@types/react/index.d.ts"
@@ -6623,6 +6624,16 @@
         "./node_modules/@types/react-redux/index.d.ts",
         "./node_modules/@types/react/index.d.ts",
         "./node_modules/antd/lib/index.d.ts"
+      ],
+      "./js/views/clusters/index.tsx": [
+        "./js/redux-sagas/app.selector.tsx",
+        "./js/utils/constants.tsx",
+        "./node_modules/@ant-design/icons/lib/index.d.ts",
+        "./node_modules/@types/react-redux/index.d.ts",
+        "./node_modules/@types/react-router-dom/index.d.ts",
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/antd/lib/index.d.ts",
+        "./node_modules/moment/ts3.1-typings/moment.d.ts"
       ],
       "./js/views/dashboard/index.tsx": [
         "./node_modules/@types/react/index.d.ts"
@@ -18090,6 +18101,20 @@
       "./js/utils/constants.tsx",
       "./js/utils/types.tsx",
       "./js/views/admin-settings/index.tsx",
+      [
+        "./js/views/clusters/index.tsx",
+        [
+          {
+            "file": "./js/views/clusters/index.tsx",
+            "start": 1406,
+            "length": 6,
+            "messageText": "'record' is declared but its value is never read.",
+            "category": 1,
+            "code": 6133,
+            "reportsUnnecessary": true
+          }
+        ]
+      ],
       "./js/views/dashboard/index.tsx",
       "./js/views/sample-view/index.tsx",
       "./node_modules/@ant-design/icons-svg/lib/types.d.ts",
@@ -19358,7 +19383,6 @@
       "./node_modules/web-vitals/dist/getTTFB.d.ts",
       "./node_modules/web-vitals/dist/index.d.ts",
       "./node_modules/web-vitals/dist/types.d.ts",
-      "./tsconfig.json",
       "../../../node_modules/reselect/lib/index.d.ts"
     ],
     "affectedFilesPendingEmit": [
@@ -19396,6 +19420,10 @@
       ],
       [
         "./js/redux-sagas/app.store.tsx",
+        0
+      ],
+      [
+        "./js/routes/index.tsx",
         0
       ],
       [

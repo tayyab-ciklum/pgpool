@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Layout, Menu } from 'antd';
 const { Sider } = Layout;
-import { HomeOutlined, SettingOutlined, ToolOutlined, LaptopOutlined, GoldOutlined } from '@ant-design/icons';
+import { HomeOutlined, SettingOutlined, ToolOutlined, LaptopOutlined, GoldOutlined , ClusterOutlined} from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 import { RouteNames } from '../../utils/constants';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
@@ -30,7 +30,10 @@ const AppMenu = ({ collapsed, toggle }: Props): JSX.Element => {
                 <Menu.Item key="1" icon={<HomeOutlined />} onClick={() => History.push(RouteNames.Dashboard.path)}>
                     Dashboard
                 </Menu.Item>
-                <Menu.Item key="2" icon={<ToolOutlined />} onClick={() => History.push(RouteNames.AdminSettings.path)}>
+                <Menu.Item key="2" icon={< ClusterOutlined/>} onClick={() => History.push(RouteNames.Clusters.path)}>
+                    Clusters
+                </Menu.Item>
+                <Menu.Item key="3" icon={<ToolOutlined />} onClick={() => History.push(RouteNames.AdminSettings.path)}>
                     Admin settings
                 </Menu.Item>
                  {clustersInfo.length != 0 ?
