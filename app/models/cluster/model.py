@@ -9,6 +9,7 @@ class Cluster(db.Model):
     __tablename__ = 'clusters'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column('name', db.String(128), nullable=False, unique=True)
     nodes = db.relationship("Node", lazy="dynamic", primaryjoin="Cluster.id == Node.cluster_id")
 
     # Sets the path to the pgpool.conf configuration file default: /usr/local/etc/pgpool.conf

@@ -58,7 +58,7 @@ def add_cluster():
     try:
         cluster.save()
     except IntegrityError as error:
-        return error._message(IndentationError), HTTPStatus.INTERNAL_SERVER_ERROR
+        return {'message': error._message(IndentationError)}, HTTPStatus.INTERNAL_SERVER_ERROR
     return cluster_schema.dump(cluster), HTTPStatus.CREATED
 
 
