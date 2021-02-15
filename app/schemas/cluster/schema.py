@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, validate, post_dump, validates_schema, ValidationError
+from marshmallow import Schema, fields, validate, post_dump, validates_schema, validates, ValidationError
 from ..node.schema import NodeSchema
 
 
@@ -6,6 +6,7 @@ class ClusterSchema(Schema):
     """This is the schema for the Contact model."""
 
     id = fields.Int(dump_only=True)
+    name = fields.String(data_key='name', required=True, validate=[validate.Length(min=4, max=64)])
     config_file = fields.String(data_key='configFile', required=True)
     password_file = fields.String(data_key='passwordFile', required=True)
     log_file = fields.String(data_key='logFile', required=True)
@@ -26,8 +27,3 @@ class ClusterSchema(Schema):
         ordered = True
         load_instance = True
         include_fk = True
-
-    @validates_schema
-    def validate_trigger(self, data):
-        if data.get('shutdown_mode').lower() not in ['smart', 'fast', 'immediate']:
-            raise ValidationError('Invalid shutdown mode')
