@@ -12,6 +12,7 @@ export declare const ActionTypes: {
         SET_CLUSTERS: string;
         UPDATE_CONFIG: string;
         RESET_REQUEST_STATE: string;
+        UPDATE_CLUSTER: string;
     };
 };
 export declare const getUser: (userId: string) => unknown;
@@ -46,4 +47,8 @@ export declare const setConfigSuccess: (cluster: unknown) => {
 };
 export declare const resetRequestState: () => {
     type: string;
+};
+export declare const updateCluster: (updatedConfig: unknown) => {
+    type: string;
+    payload: unknown;
 };

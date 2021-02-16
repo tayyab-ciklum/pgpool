@@ -7,10 +7,11 @@ const INITIAL_STATE = {
     userStatus: true,
     requestError: false,
     requestSuccess: false,
+    updatedConfig: null,
     clusters: []
 };
 const { GET_CURRENT_USER, USER_REQUEST_SUCCESS, USER_REQUEST_FAILURE } = USER_ACTIONS;
-const { REQUEST_ERROR, SET_CLUSTERS, SET_CONFIG_SUCCESS, RESET_REQUEST_STATE} = ADMIN_ACTIONS;
+const { REQUEST_ERROR, SET_CLUSTERS, SET_CONFIG_SUCCESS, RESET_REQUEST_STATE, UPDATE_CLUSTER} = ADMIN_ACTIONS;
 const AppReducer = (state = INITIAL_STATE, action: SagaAction): unknown => {
     const { type, payload } = action;
     switch (type) {
@@ -51,7 +52,7 @@ const AppReducer = (state = INITIAL_STATE, action: SagaAction): unknown => {
                     ...state,
                     requestError: false,
                     requestSuccess: true,
-                    clusters: [payload]
+                    clusters: [...state.clusters , payload ]
                 }
             };
             case RESET_REQUEST_STATE: {
@@ -61,6 +62,14 @@ const AppReducer = (state = INITIAL_STATE, action: SagaAction): unknown => {
                     requestSuccess: false,
                 }
             };
+            case UPDATE_CLUSTER : {
+                return {
+                    ...state,
+                    requestSuccess: true,
+                    requestError: false,
+                    updatedConfig: payload
+                }
+            }
         default:
             return state;
     }

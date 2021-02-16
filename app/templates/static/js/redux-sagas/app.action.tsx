@@ -11,7 +11,8 @@ export const ActionTypes = {
         GET_CLUSTERS:'GET_CLUSTERS',
         SET_CLUSTERS:'SET_CLUSTERS',
         UPDATE_CONFIG:'UPDATE_CONFIG',
-        RESET_REQUEST_STATE: 'RESET_REQUEST_STATE'
+        RESET_REQUEST_STATE: 'RESET_REQUEST_STATE',
+        UPDATE_CLUSTER:'UPDATE_CLUSTER'
     }
 };
 export const getUser = (userId: string): unknown => ({
@@ -52,3 +53,7 @@ export const setConfigSuccess = (cluster: unknown) => ({
 export const resetRequestState = () => ({
     type: ActionTypes.ADMIN_ACTIONS.RESET_REQUEST_STATE
 });
+export const updateCluster = (updatedConfig: unknown) => ({
+    type: ActionTypes.ADMIN_ACTIONS.UPDATE_CLUSTER,
+    payload: updatedConfig
+})

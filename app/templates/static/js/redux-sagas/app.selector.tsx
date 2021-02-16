@@ -14,3 +14,7 @@ export const selectSuccess = createSelector(
   [adminState],
   (adminStateData: any) => adminStateData.requestSuccess
 );
+export const selectUpdatedConfig = createSelector(
+  [adminState],
+  (adminStateData: any) => adminStateData.updatedConfig
+);

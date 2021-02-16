@@ -20,6 +20,10 @@ const routeList = {
     Clusters: {
         path: RouteNames.Clusters.path,
         component: Clusters,
+    },
+    AddCluster: {
+        path: RouteNames.AddCluster.path,
+        component: AdminSettings,
     }
 };
 export default routeList;

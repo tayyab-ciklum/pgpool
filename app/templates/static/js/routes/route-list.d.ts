@@ -16,5 +16,9 @@ declare const routeList: {
         path: string;
         component: import("react").LazyExoticComponent<() => JSX.Element>;
     };
+    AddCluster: {
+        path: string;
+        component: import("react").LazyExoticComponent<() => JSX.Element>;
+    };
 };
 export default routeList;

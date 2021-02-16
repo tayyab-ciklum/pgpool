@@ -17,7 +17,7 @@ const columns = [
     },
     {
       title: 'No of Nodes',
-      dataIndex: 'nodes',
+      dataIndex: 'nodeCount',
     },
     {
         title: 'Date of creation',
@@ -33,20 +33,23 @@ const Clusters = () => {
     const data : object[] = [];
     console.log('filter', clustersInfo.filter((cluster: any) => cluster.id == 1 ));
     clustersInfo.map((cluster: any) => data.push( {
+      ...cluster,
         key: cluster.id,
-        name: 'Cluster ' +  cluster.id,
-        pcpHostname: cluster.pcpHostname,
         createdAt: moment(cluster.createdAt).format(DATE_FORMAT),
-        nodes: cluster.nodes.length
+        nodeCount: cluster.nodes.length
     }));
     return (
         <div>
-        <Button type="primary" style={{float: 'right', marginBottom: '10px'}} icon={<PlusOutlined />}>Add Cluster </Button>
+        <Button type="primary"
+        onClick={() => History.push(RouteNames.AddCluster.path)}
+         style={{float: 'right', marginBottom: '10px'}} icon={<PlusOutlined />}>Add Cluster </Button>
         <Table
          onRow={(record) => {
             return {
               onClick: () => {
-              () =>  History.push(RouteNames.AdminSettings.path);
+              History.push({
+               pathname: RouteNames.AdminSettings.path,
+               state: record});
               },
             };
           }}

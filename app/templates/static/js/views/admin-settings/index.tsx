@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Form, Input, Button, Row, Col, Space, Switch, Select } from 'antd';
 import { setConfig, updateConfig } from '../../redux-sagas/app.action';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import {useDispatch } from 'react-redux';
 import { dropDownsData } from '../../utils/constants';
-import { selectClusters } from '../../redux-sagas/app.selector';
+import { useHistory } from 'react-router-dom';
 const layout = {
     labelCol: {
         span: 7,
@@ -14,15 +14,11 @@ const layout = {
 };
 const AdminSettings = (): JSX.Element => {
     const [formRef] = Form.useForm();
-    const dispatch = useDispatch();
-    const clustersInfo = useSelector(
-        selectClusters,
-        shallowEqual
-      ) as any;
-    useEffect(() => {
-        if(clustersInfo.length !== 0) 
-     formRef.setFieldsValue({...clustersInfo[0]});
-      },[dispatch, clustersInfo]);    
+    const History = useHistory();
+    const data = History.location.state;
+    if(data)
+    formRef.setFieldsValue(data);
+    const dispatch = useDispatch();  
     const getOptions = (type: string) => {
         let res: JSX.Element[] = [];
         const option = Object.values(dropDownsData).find((menu) => menu.key === type)?.value;
@@ -35,10 +31,11 @@ const AdminSettings = (): JSX.Element => {
         return res;
     };
     const handleSubmit = () => {
-        if(clustersInfo.length == 0)
-        dispatch(setConfig(formRef.getFieldsValue()));
+        const record : any = data;
+        if(!record)
+            dispatch(setConfig(formRef.getFieldsValue()));
         else
-        dispatch(updateConfig(formRef.getFieldsValue(), clustersInfo[0].id));
+            dispatch(updateConfig(formRef.getFieldsValue(), record.key));
     };
     return (
         <div>
@@ -170,6 +167,18 @@ const AdminSettings = (): JSX.Element => {
                                 },
                             ]}
                             label="PCP Hostname"
+                        >
+                            <Input />
+                        </Form.Item>
+                        <Form.Item
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Required',
+                                }
+                            ]}
+                            name="name"
+                            label="Cluster Name"
                         >
                             <Input />
                         </Form.Item>
