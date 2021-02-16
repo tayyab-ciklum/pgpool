@@ -2,7 +2,8 @@ const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 const resolve = require('path').resolve;
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = {
  devtool: 'eval-source-map',
  entry: __dirname + '/js/index.tsx',
@@ -22,7 +23,7 @@ const config = {
   },
   {
          test: /\.css$/i,
-         use:['style-loader','css-loader']
+         use:[MiniCssExtractPlugin.loader ,'css-loader']
   },
   {
       test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -34,7 +35,12 @@ const config = {
  },
  plugins: [
        new ForkTsCheckerWebpackPlugin(),
-       new TerserPlugin()
+       new TerserPlugin(),
+       new MiniCssExtractPlugin({
+             filename:'css/style.css'
+       }),
+       new CleanWebpackPlugin()
+      
      ]
 };
 module.exports = config;

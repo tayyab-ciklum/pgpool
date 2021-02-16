@@ -5777,7 +5777,7 @@
         "affectsGlobalScope": false
       },
       "./js/views/clusters/index.tsx": {
-        "version": "a0145b5e2f8172930118ca8b3073b40df8bf29758958e19050f4cf214d3ae6e6",
+        "version": "dc251207f04408e00b71c286f07854219e5af744ecfa9233b7ef6e0962cc3153",
         "signature": "56f3df598058d4a7bfbc38488772bdc68320a513ce42f510640c539154eb3100",
         "affectsGlobalScope": false
       },
@@ -18101,20 +18101,7 @@
       "./js/utils/constants.tsx",
       "./js/utils/types.tsx",
       "./js/views/admin-settings/index.tsx",
-      [
-        "./js/views/clusters/index.tsx",
-        [
-          {
-            "file": "./js/views/clusters/index.tsx",
-            "start": 1406,
-            "length": 6,
-            "messageText": "'record' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          }
-        ]
-      ],
+      "./js/views/clusters/index.tsx",
       "./js/views/dashboard/index.tsx",
       "./js/views/sample-view/index.tsx",
       "./node_modules/@ant-design/icons-svg/lib/types.d.ts",
