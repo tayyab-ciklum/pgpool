@@ -5772,12 +5772,12 @@
         "affectsGlobalScope": false
       },
       "./js/views/admin-settings/index.tsx": {
-        "version": "4151ca1f86f3af71c609b0f8696f75212e6e7d5f9f3d0012f3cd827535f82152",
+        "version": "9f46a3680bb5d45fd20bfaac1759370d2b30aa566205244a4b8b8a0c75c24997",
         "signature": "9935996f68d81b04db462d763514fc772dad535205e441f744daa1ae8a6a2042",
         "affectsGlobalScope": false
       },
       "./js/views/clusters/index.tsx": {
-        "version": "24863a26907363084d5fb6997e28b7cd9116148672bb3da53a2be3309eed5687",
+        "version": "1c593f2a6e11597229cc16e627c5a1be607858fa811595ece7faecdfdbfea671",
         "signature": "56f3df598058d4a7bfbc38488772bdc68320a513ce42f510640c539154eb3100",
         "affectsGlobalScope": false
       },
@@ -5867,7 +5867,7 @@
         "affectsGlobalScope": false
       },
       "./js/redux-sagas/app.reducer.tsx": {
-        "version": "e87d5474b80f3156e7a322bc5a6d86bdce2c70e307dc507ca78a355582c1b0a9",
+        "version": "a80361e53ad0ac2c942948c2f6fd62d659dabcb7abb22204fcc68546f3f414a1",
         "signature": "e768bd9de32fd9c11a4b94e1fe8303b28cd9d28b91da984d7c718dc9a47e3c8c",
         "affectsGlobalScope": false
       },
@@ -5907,7 +5907,7 @@
         "affectsGlobalScope": false
       },
       "./js/redux-sagas/app.saga.tsx": {
-        "version": "8dd9064c584efa20401037d0fa17a816f3d333c0191857e8cdca03c3e5dfd09f",
+        "version": "cd9544123e0e9880dcb447e6cd0ef9a4fce71074a2222cbef799c4f07dc04447",
         "signature": "2088d24c825974e70704e5044a69d0a0eadf57518d5a6a2eb5d816f0f8011ce4",
         "affectsGlobalScope": false
       },
@@ -6627,6 +6627,7 @@
         "./node_modules/antd/lib/index.d.ts"
       ],
       "./js/views/clusters/index.tsx": [
+        "./js/redux-sagas/app.action.tsx",
         "./js/redux-sagas/app.selector.tsx",
         "./js/utils/constants.tsx",
         "./node_modules/@ant-design/icons/lib/index.d.ts",

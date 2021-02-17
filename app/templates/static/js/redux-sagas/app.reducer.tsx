@@ -65,9 +65,9 @@ const AppReducer = (state = INITIAL_STATE, action: SagaAction): unknown => {
             case UPDATE_CLUSTER : {
                 return {
                     ...state,
-                    requestSuccess: true,
+                    requestSuccess: false,
                     requestError: false,
-                    updatedConfig: payload
+                    clusters: [...payload]
                 }
             }
         default:

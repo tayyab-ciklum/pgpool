@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Table, Button } from "antd";
-import { selectClusters } from '../../redux-sagas/app.selector';
-import { shallowEqual, useSelector } from 'react-redux';
+import { selectClusters, selectSuccess, selectUpdatedConfig } from '../../redux-sagas/app.selector';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { DATE_FORMAT, RouteNames } from '../../utils/constants';
 import { PlusOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
+import { updateCluster } from '../../redux-sagas/app.action';
 const columns = [
     {
       title: 'Name',
@@ -26,12 +27,28 @@ const columns = [
   ];
 const Clusters = () => {
     const History = useHistory();
+    const dispatch = useDispatch();
     const clustersInfo = useSelector(
         selectClusters,
         shallowEqual
       ) as any;
+      const success = useSelector(
+        selectSuccess,
+        shallowEqual
+      ) as any;
+      const updateConfig = useSelector(
+        selectUpdatedConfig,
+        shallowEqual
+      ) as any;
+    useEffect(() => {
+      if(updateConfig) {
+        const clusters = clustersInfo.filter((cluster: any) => cluster.id != updateConfig.id);
+        const updatedClusters = [...clusters , updateConfig];
+        dispatch(updateCluster(updatedClusters));
+        console.log('updated config', updatedClusters);
+      }
+    },[success])
     const data : object[] = [];
-    console.log('filter', clustersInfo.filter((cluster: any) => cluster.id == 1 ));
     clustersInfo.map((cluster: any) => data.push( {
       ...cluster,
         key: cluster.id,

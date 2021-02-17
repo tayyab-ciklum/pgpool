@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Input, Button, Row, Col, Space, Switch, Select } from 'antd';
 import { setConfig, updateConfig } from '../../redux-sagas/app.action';
 import {useDispatch } from 'react-redux';
-import { dropDownsData } from '../../utils/constants';
+import { dropDownsData, RouteNames } from '../../utils/constants';
 import { useHistory } from 'react-router-dom';
 const layout = {
     labelCol: {
@@ -36,6 +36,7 @@ const AdminSettings = (): JSX.Element => {
             dispatch(setConfig(formRef.getFieldsValue()));
         else
             dispatch(updateConfig(formRef.getFieldsValue(), record.key));
+        History.push(RouteNames.Clusters.path);
     };
     return (
         <div>
@@ -254,7 +255,7 @@ const AdminSettings = (): JSX.Element => {
                     <Button type="primary" htmlType="submit">
                         Submit
                     </Button>
-                    <Button>Cancel</Button>
+                    <Button onClick={()=> History.goBack()}>Cancel</Button>
                 </Space>
             </Form>
         </div>

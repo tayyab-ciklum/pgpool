@@ -35,7 +35,7 @@ function* getClusters() {
 }
 function* updateConfig(data: any) {
     try {
-      //  yield put(actions.resetRequestState());
+        yield put(actions.resetRequestState());
         const result = yield adminApi.updateConfig(data.config, data.id);
         yield put(actions.updateCluster(result));
     } catch (error) {
