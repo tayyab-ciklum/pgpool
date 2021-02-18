@@ -43,7 +43,7 @@ const Clusters = () => {
         <div>
         <Button type="primary" style={{float: 'right', marginBottom: '10px'}} icon={<PlusOutlined />}>Add Cluster </Button>
         <Table
-         onRow={(record) => {
+         onRow={() => {
             return {
               onClick: () => {
               () =>  History.push(RouteNames.AdminSettings.path);
