@@ -13,6 +13,9 @@ export const RouteNames = {
     },
     AddCluster: {
         path: '/add-cluster',
+    },
+    Nodes : {
+        path: '/node'
     }
 };
 export const dropDownsData: { key: string; value: string[] }[] = [

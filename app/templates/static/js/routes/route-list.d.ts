@@ -20,5 +20,9 @@ declare const routeList: {
         path: string;
         component: import("react").LazyExoticComponent<() => JSX.Element>;
     };
+    Nodes: {
+        path: string;
+        component: import("react").LazyExoticComponent<() => JSX.Element>;
+    };
 };
 export default routeList;

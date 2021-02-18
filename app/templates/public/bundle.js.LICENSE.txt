@@ -338,6 +338,8 @@
 
 /*! exports provided: names */
 
+/*! exports provided: nodesInfo */
+
 /*! exports provided: noop, getKeyFromChildrenIndex, getMenuIdFromSubMenuEventKey, loopMenuItem, loopMenuItemRecursively, menuAllProps, getWidth, setStyle, isMobileDevice */
 
 /*! exports provided: offset, default */
@@ -462,8 +464,16 @@
   !*** ./js/utils/constants.tsx ***!
   \********************************/
 
+/*!********************************!*\
+  !*** ./js/views/nodesInfo.tsx ***!
+  \********************************/
+
 /*!**********************************!*\
   !*** ./js/routes/route-list.tsx ***!
+  \**********************************/
+
+/*!**********************************!*\
+  !*** ./js/views/nodes/index.tsx ***!
   \**********************************/
 
 /*!***********************************!*\
@@ -740,6 +750,10 @@
 
 /*!******************************************!*\
   !*** ./js/assets/images/logo-pgpool.png ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ./js/components/nodeTabs/index.tsx ***!
   \******************************************/
 
 /*!******************************************!*\

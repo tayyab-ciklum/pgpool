@@ -5707,8 +5707,8 @@
         "affectsGlobalScope": false
       },
       "./js/utils/constants.tsx": {
-        "version": "a6b8b4ba43a29471b46bd722152750b7aedb09ca04f28e8a7fb4fd910e5762d8",
-        "signature": "42a5f376e51e50f855de027c94cf217cb2674058a3ce374d1f19f1c704314076",
+        "version": "96c9596fe6133dfa26c4f5ab0bb43fa661a5979f0479003fa9a8b5481e934995",
+        "signature": "fa7d15e172935ec2c224777e9fdf4c288c4d6b9a8242ed3aa1373f9767b1ca7e",
         "affectsGlobalScope": false
       },
       "./node_modules/symbol-observable/index.d.ts": {
@@ -5777,17 +5777,32 @@
         "affectsGlobalScope": false
       },
       "./js/views/clusters/index.tsx": {
-        "version": "1c593f2a6e11597229cc16e627c5a1be607858fa811595ece7faecdfdbfea671",
+        "version": "4ae7ce180f722fc8d146028ba6baf8dd6b2685b240ba15648f30b9aee8b79598",
         "signature": "56f3df598058d4a7bfbc38488772bdc68320a513ce42f510640c539154eb3100",
         "affectsGlobalScope": false
       },
+      "./js/views/nodesInfo.tsx": {
+        "version": "68a17e75df93b12ed890275351c15f9db2f85f2d62440f38c48466a3da6ac8d9",
+        "signature": "3742233a71f31573a0be68c191e7dc5d1948aa9fcd849d130936eacba64e9719",
+        "affectsGlobalScope": false
+      },
+      "./js/components/nodeTabs/index.tsx": {
+        "version": "7e40f6ba13f962fda3799cbef6e8c24713abca127f85f84017149cde6bfe7d07",
+        "signature": "30dea9934717b42c018343bc5d2b106e0101a2d8ff6b2148559405732b4b0636",
+        "affectsGlobalScope": false
+      },
+      "./js/views/nodes/index.tsx": {
+        "version": "987e557a71a7e3560439e3e1d619f3e412635d06ae701c7ffc63f6db17fb55e8",
+        "signature": "4bbc7d290cf6e183bff9d791d0cb20778f4a820ef0492307f2fe31c758603794",
+        "affectsGlobalScope": false
+      },
       "./js/routes/route-list.tsx": {
-        "version": "709a18005466cd107a18c6b0c13dce09aacee989549287eb3c9751679fd23468",
-        "signature": "1e8010a81792e322e7e89b420fe8f7c3e1a041e29a297b736ef6f64a87eb567e",
+        "version": "b79965a3f7fbe89ac74ab27b2f66141bb35b540184d658490ca81b0f6c273b53",
+        "signature": "14f519e2f718a3a2e9e6ab22ab077c2098f213f3d369cbe283203cefc8401780",
         "affectsGlobalScope": false
       },
       "./js/routes/index.tsx": {
-        "version": "618bac42661b1fd3f27aba1d3ec232303ae93e346b1d3538c3c8a0315e67930b",
+        "version": "45921035afe6e2d1e6c8cfee32f1827e8343bf883851526fa581a199a9b0f180",
         "signature": "7eea58f54956d564c25084d8819dd33cafee4a7b823194cd1613a9c2b2d12171",
         "affectsGlobalScope": false
       },
@@ -6241,6 +6256,11 @@
         "signature": "a46d66851af2c056e805fdd574bf5ec3adb1181c43c5e41f0a1c592e338afe64",
         "affectsGlobalScope": false
       },
+      "./tsconfig.json": {
+        "version": "b1c42b1191720cbcc78b5755ff297e7693646a0505380bb8bb0442758254cdd3",
+        "signature": "27974652dfcc2802c1f65df525d7e2943768f08ace7a401cc536fdd95cc2c757",
+        "affectsGlobalScope": true
+      },
       "./node_modules/@types/anymatch/index.d.ts": {
         "version": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
         "signature": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
@@ -6550,6 +6570,11 @@
         "./node_modules/@types/react/index.d.ts",
         "./node_modules/antd/lib/index.d.ts"
       ],
+      "./js/components/nodeTabs/index.tsx": [
+        "./js/views/nodesInfo.tsx",
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/antd/lib/index.d.ts"
+      ],
       "./js/components/popup/index.tsx": [
         "./js/redux-sagas/app.selector.tsx",
         "./node_modules/@types/react-redux/index.d.ts",
@@ -6607,6 +6632,7 @@
         "./js/views/admin-settings/index.tsx",
         "./js/views/clusters/index.tsx",
         "./js/views/dashboard/index.tsx",
+        "./js/views/nodes/index.tsx",
         "./js/views/sample-view/index.tsx",
         "./node_modules/@types/react/index.d.ts"
       ],
@@ -6638,6 +6664,15 @@
         "./node_modules/moment/ts3.1-typings/moment.d.ts"
       ],
       "./js/views/dashboard/index.tsx": [
+        "./node_modules/@types/react/index.d.ts"
+      ],
+      "./js/views/nodes/index.tsx": [
+        "./js/components/nodeTabs/index.tsx",
+        "./node_modules/@types/react/index.d.ts"
+      ],
+      "./js/views/nodesInfo.tsx": [
+        "./js/views/admin-settings/index.tsx",
+        "./js/views/clusters/index.tsx",
         "./node_modules/@types/react/index.d.ts"
       ],
       "./js/views/sample-view/index.tsx": [
@@ -18083,6 +18118,7 @@
       "./js/components/header/index.tsx",
       "./js/components/header/sideMenu.tsx",
       "./js/components/menu/index.tsx",
+      "./js/components/nodeTabs/index.tsx",
       "./js/components/popup/index.tsx",
       "./js/config/index.tsx",
       "./js/config/request.tsx",
@@ -18105,6 +18141,8 @@
       "./js/views/admin-settings/index.tsx",
       "./js/views/clusters/index.tsx",
       "./js/views/dashboard/index.tsx",
+      "./js/views/nodes/index.tsx",
+      "./js/views/nodesInfo.tsx",
       "./js/views/sample-view/index.tsx",
       "./node_modules/@ant-design/icons-svg/lib/types.d.ts",
       "./node_modules/@ant-design/icons/lib/components/AntdIcon.d.ts",
@@ -19372,6 +19410,7 @@
       "./node_modules/web-vitals/dist/getTTFB.d.ts",
       "./node_modules/web-vitals/dist/index.d.ts",
       "./node_modules/web-vitals/dist/types.d.ts",
+      "./tsconfig.json",
       "../../../node_modules/reselect/lib/index.d.ts"
     ],
     "affectedFilesPendingEmit": [
@@ -19393,6 +19432,10 @@
       ],
       [
         "./js/components/menu/index.tsx",
+        0
+      ],
+      [
+        "./js/components/nodeTabs/index.tsx",
         0
       ],
       [
@@ -19437,6 +19480,10 @@
       ],
       [
         "./js/views/dashboard/index.tsx",
+        0
+      ],
+      [
+        "./js/views/nodes/index.tsx",
         0
       ],
       [

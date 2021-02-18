@@ -4,6 +4,7 @@ const Sample = lazy(() => import('../views/sample-view'));
 const Dashboard = lazy(() => import('../views/dashboard'));
 const AdminSettings = lazy(() => import('../views/admin-settings'));
 const Clusters = lazy(() => import('../views/clusters'));
+const Nodes = lazy(() => import('../views/nodes'));
 const routeList = {
     Sample: {
         path: RouteNames.Sample.path,
@@ -24,6 +25,10 @@ const routeList = {
     AddCluster: {
         path: RouteNames.AddCluster.path,
         component: AdminSettings,
+    },
+    Nodes : {
+        path : RouteNames.Nodes.path,
+        component: Nodes
     }
 };
 export default routeList;

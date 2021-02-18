@@ -14,6 +14,9 @@ export declare const RouteNames: {
     AddCluster: {
         path: string;
     };
+    Nodes: {
+        path: string;
+    };
 };
 export declare const dropDownsData: {
     key: string;
