@@ -5766,8 +5766,18 @@
         "signature": "dc2ac853a2e3a2b3ba650763b5554f7efb07db4fd09c03117402e7f003fbb60c",
         "affectsGlobalScope": false
       },
+      "./node_modules/i18next/index.d.ts": {
+        "version": "d9a665ee1612ce2e437f38e0e33fae22bb00384b788d86bdb41456dba3cc52ed",
+        "signature": "d9a665ee1612ce2e437f38e0e33fae22bb00384b788d86bdb41456dba3cc52ed",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/react-i18next/src/ts4.1/index.d.ts": {
+        "version": "a5a3624c472c626c6ddbbd8c6c367dc68225effe8fac0427b0639a8997f2941b",
+        "signature": "a5a3624c472c626c6ddbbd8c6c367dc68225effe8fac0427b0639a8997f2941b",
+        "affectsGlobalScope": false
+      },
       "./js/views/dashboard/index.tsx": {
-        "version": "5cd0ee6bcb3cbc70837c07dee46d2be6574fc989c2682d76a9b509b707ba8512",
+        "version": "eebb3642df19a3c00e35ad7876cee5e40345356d31137fe6bbdd3b5065b9db27",
         "signature": "56ee0f96096b60f542b60837fbe613aea83608ddf5125656ed8dd5eb9d28b9c9",
         "affectsGlobalScope": false
       },
@@ -5809,6 +5819,16 @@
       "./js/App.test.tsx": {
         "version": "9dfd4689a9bbf3e1874e61d47049bb111fbdf2ce0c33e2688b98ed26a85a45d4",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/i18next-xhr-backend/index.d.ts": {
+        "version": "d8a4c5e2b3b65d1e7a6f27ba5ab654017efa28e99c3c33fec0afa5f709655959",
+        "signature": "d8a4c5e2b3b65d1e7a6f27ba5ab654017efa28e99c3c33fec0afa5f709655959",
+        "affectsGlobalScope": false
+      },
+      "./js/i18n.js": {
+        "version": "9b46d63d1eda685fcc347e876c7e5cffac5f2bd14716cb951c89302692b72ab9",
+        "signature": "5376d3a3a0436160390a3ea00ff5b3e26699b3e1d13ada59367e7faa2d682190",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/react-dom/index.d.ts": {
@@ -5917,8 +5937,8 @@
         "affectsGlobalScope": false
       },
       "./js/index.tsx": {
-        "version": "d5af0c9861fb9b9d351ce432a93fa842cdb71224be996a23645a13a550ae9df7",
-        "signature": "63cddb68058c704840fce7cd246b438a8f2c0b884a71691ad82d86bd375cea5c",
+        "version": "aca5837d3f035ccacb3ea73729a7321631ff7c076e5bef47ac1988343ee3e21b",
+        "signature": "a97858117549484da5851fdb0225e63c7f93f2bf5c05488e48235b7fb98d7268",
         "affectsGlobalScope": false
       },
       "./node_modules/@types/node/globals.d.ts": {
@@ -6562,8 +6582,14 @@
       "./js/config/urls.tsx": [
         "./js/config/index.tsx"
       ],
+      "./js/i18n.js": [
+        "./node_modules/i18next-xhr-backend/index.d.ts",
+        "./node_modules/i18next/index.d.ts",
+        "./node_modules/react-i18next/src/ts4.1/index.d.ts"
+      ],
       "./js/index.tsx": [
         "./js/App.tsx",
+        "./js/i18n.js",
         "./js/redux-sagas/app.store.tsx",
         "./node_modules/@types/react-dom/index.d.ts",
         "./node_modules/@types/react-redux/index.d.ts",
@@ -6636,7 +6662,9 @@
         "./node_modules/moment/ts3.1-typings/moment.d.ts"
       ],
       "./js/views/dashboard/index.tsx": [
-        "./node_modules/@types/react/index.d.ts"
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/antd/lib/index.d.ts",
+        "./node_modules/react-i18next/src/ts4.1/index.d.ts"
       ],
       "./js/views/sample-view/index.tsx": [
         "./js/redux-sagas/app.action.tsx",
@@ -11886,6 +11914,9 @@
       "./node_modules/antd/lib/version/index.d.ts": [
         "./node_modules/antd/lib/version/version.d.ts"
       ],
+      "./node_modules/i18next-xhr-backend/index.d.ts": [
+        "./node_modules/i18next/index.d.ts"
+      ],
       "./node_modules/jest-diff/build/diffLines.d.ts": [
         "./node_modules/jest-diff/build/cleanupSemantic.d.ts",
         "./node_modules/jest-diff/build/types.d.ts"
@@ -12293,6 +12324,10 @@
       "./node_modules/rc-virtual-list/lib/interface.d.ts": [
         "./node_modules/@types/react/index.d.ts"
       ],
+      "./node_modules/react-i18next/src/ts4.1/index.d.ts": [
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/i18next/index.d.ts"
+      ],
       "./node_modules/react-scripts/lib/react-app.d.ts": [
         "./node_modules/@types/node/index.d.ts",
         "./node_modules/@types/react-dom/index.d.ts",
@@ -12349,6 +12384,9 @@
     "exportedModulesMap": {
       "./js/config/request.tsx": [
         "./node_modules/axios/index.d.ts"
+      ],
+      "./js/index.tsx": [
+        "./js/i18n.js"
       ],
       "./js/react-app-env.d.ts": [
         "./node_modules/react-scripts/lib/react-app.d.ts"
@@ -17614,6 +17652,9 @@
       "./node_modules/antd/lib/version/index.d.ts": [
         "./node_modules/antd/lib/version/version.d.ts"
       ],
+      "./node_modules/i18next-xhr-backend/index.d.ts": [
+        "./node_modules/i18next/index.d.ts"
+      ],
       "./node_modules/jest-diff/build/diffLines.d.ts": [
         "./node_modules/jest-diff/build/cleanupSemantic.d.ts",
         "./node_modules/jest-diff/build/types.d.ts"
@@ -18021,6 +18062,10 @@
       "./node_modules/rc-virtual-list/lib/interface.d.ts": [
         "./node_modules/@types/react/index.d.ts"
       ],
+      "./node_modules/react-i18next/src/ts4.1/index.d.ts": [
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/i18next/index.d.ts"
+      ],
       "./node_modules/react-scripts/lib/react-app.d.ts": [
         "./node_modules/@types/node/index.d.ts",
         "./node_modules/@types/react-dom/index.d.ts",
@@ -18085,6 +18130,7 @@
       "./js/config/index.tsx",
       "./js/config/request.tsx",
       "./js/config/urls.tsx",
+      "./js/i18n.js",
       "./js/index.tsx",
       "./js/react-app-env.d.ts",
       "./js/redux-sagas/app.action.tsx",
@@ -19211,6 +19257,8 @@
       "./node_modules/anymatch/index.d.ts",
       "./node_modules/axios/index.d.ts",
       "./node_modules/csstype/index.d.ts",
+      "./node_modules/i18next-xhr-backend/index.d.ts",
+      "./node_modules/i18next/index.d.ts",
       "./node_modules/jest-diff/build/cleanupSemantic.d.ts",
       "./node_modules/jest-diff/build/diffLines.d.ts",
       "./node_modules/jest-diff/build/index.d.ts",
@@ -19307,6 +19355,7 @@
       "./node_modules/rc-util/lib/PortalWrapper.d.ts",
       "./node_modules/rc-virtual-list/lib/List.d.ts",
       "./node_modules/rc-virtual-list/lib/interface.d.ts",
+      "./node_modules/react-i18next/src/ts4.1/index.d.ts",
       "./node_modules/react-scripts/lib/react-app.d.ts",
       "./node_modules/redux-saga/effects.d.ts",
       "./node_modules/redux-saga/index.d.ts",
@@ -19378,63 +19427,7 @@
         0
       ],
       [
-        "./js/App.tsx",
-        0
-      ],
-      [
-        "./js/components/content/index.tsx",
-        0
-      ],
-      [
-        "./js/components/header/index.tsx",
-        0
-      ],
-      [
-        "./js/components/menu/index.tsx",
-        0
-      ],
-      [
         "./js/index.tsx",
-        0
-      ],
-      [
-        "./js/redux-sagas/app.reducer.tsx",
-        0
-      ],
-      [
-        "./js/redux-sagas/app.saga.tsx",
-        0
-      ],
-      [
-        "./js/redux-sagas/app.store.tsx",
-        0
-      ],
-      [
-        "./js/routes/index.tsx",
-        0
-      ],
-      [
-        "./js/routes/route-list.tsx",
-        0
-      ],
-      [
-        "./js/services/admin.tsx",
-        0
-      ],
-      [
-        "./js/services/user.tsx",
-        0
-      ],
-      [
-        "./js/views/admin-settings/index.tsx",
-        0
-      ],
-      [
-        "./js/views/dashboard/index.tsx",
-        0
-      ],
-      [
-        "./js/views/sample-view/index.tsx",
         0
       ]
     ]
