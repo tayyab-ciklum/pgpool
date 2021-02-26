@@ -1,5 +1,5 @@
 import React from "react";
-import AdminSettings from "../views/admin-settings";
+import AdminSettings from "../views/setting-groups/admin-settings";
 
 export const nodeSettingsConfig: { key: number; name: string; Component: JSX.Element }[] = [
     {
