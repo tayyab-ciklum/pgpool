@@ -5761,8 +5761,13 @@
         "signature": "5c71f1d4f396309f657f76e014fa59f522ccf67c517b7280c2b930c08f3e7de7",
         "affectsGlobalScope": false
       },
+      "./js/views/add-node/index.tsx": {
+        "version": "6f015adba8ce40fe92a1c8f17ff90567ff2cd88d4ddac343d5a9b049e26161ef",
+        "signature": "f8e86e29c08866435fb94cd41ff513123582eb1a71a70de43b9fa5874751a636",
+        "affectsGlobalScope": false
+      },
       "./js/views/dashboard/index.tsx": {
-        "version": "5cd0ee6bcb3cbc70837c07dee46d2be6574fc989c2682d76a9b509b707ba8512",
+        "version": "ed740ad5f00dbda1dae9d433e827c3afa61132875432f3132d132361c60f3f36",
         "signature": "56ee0f96096b60f542b60837fbe613aea83608ddf5125656ed8dd5eb9d28b9c9",
         "affectsGlobalScope": false
       },
@@ -6266,11 +6271,6 @@
         "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
         "affectsGlobalScope": false
       },
-      "./js/views/sample-view/index.d.ts": {
-        "version": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "signature": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-        "affectsGlobalScope": false
-      },
       "./node_modules/@types/anymatch/index.d.ts": {
         "version": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
         "signature": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
@@ -6661,6 +6661,10 @@
         "./js/config/request.tsx",
         "./js/config/urls.tsx"
       ],
+      "./js/views/add-node/index.tsx": [
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/antd/lib/index.d.ts"
+      ],
       "./js/views/clusters/index.tsx": [
         "./js/redux-sagas/app.selector.tsx",
         "./js/utils/constants.tsx",
@@ -6672,7 +6676,10 @@
         "./node_modules/moment/ts3.1-typings/moment.d.ts"
       ],
       "./js/views/dashboard/index.tsx": [
-        "./node_modules/@types/react/index.d.ts"
+        "./js/views/add-node/index.tsx",
+        "./node_modules/@ant-design/icons/lib/index.d.ts",
+        "./node_modules/@types/react/index.d.ts",
+        "./node_modules/antd/lib/index.d.ts"
       ],
       "./js/views/node-settings/index.tsx": [
         "./js/config/nodeSettingsConfig.tsx",
@@ -12420,6 +12427,9 @@
       "./js/routes/route-list.tsx": [
         "./node_modules/@types/react/index.d.ts"
       ],
+      "./js/views/add-node/index.tsx": [
+        "./node_modules/@types/react/index.d.ts"
+      ],
       "./node_modules/@ant-design/icons/lib/components/AntdIcon.d.ts": [
         "./node_modules/@ant-design/icons-svg/lib/types.d.ts",
         "./node_modules/@ant-design/icons/lib/components/Icon.d.ts",
@@ -18151,12 +18161,12 @@
       "./js/setupTests.ts",
       "./js/utils/constants.tsx",
       "./js/utils/types.tsx",
+      "./js/views/add-node/index.tsx",
       "./js/views/admin-settings/index.d.ts",
       "./js/views/clusters/index.tsx",
       "./js/views/dashboard/index.tsx",
       "./js/views/node-settings/index.tsx",
       "./js/views/nodes/index.tsx",
-      "./js/views/sample-view/index.d.ts",
       "./js/views/setting-groups/admin-settings/index.tsx",
       "./node_modules/@ant-design/icons-svg/lib/types.d.ts",
       "./node_modules/@ant-design/icons/lib/components/AntdIcon.d.ts",
@@ -19429,6 +19439,10 @@
     "affectedFilesPendingEmit": [
       [
         "./js/routes/index.tsx",
+        0
+      ],
+      [
+        "./js/views/dashboard/index.tsx",
         0
       ]
     ]
