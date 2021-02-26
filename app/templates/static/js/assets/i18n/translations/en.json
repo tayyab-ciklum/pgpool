@@ -1,4 +1,14 @@
 {
+    "Menu" : {
+      "DASHBOARD": "Dashboard",
+      "CLUSTERS": "Clusters",
+      "NODE": "Node",
+      "POSTGRES_ACCOUNT":"Postgres Account"
+     
+    },
+    "Headings": {
+      "SETTINGS": "Settings"
+    },
     "hello.label": "Hello translationqwertyuio",
     "thankyou.label": "Thank you"
   }
