@@ -1,14 +1,10 @@
 import { lazy } from 'react';
 import { RouteNames } from '../utils/constants';
-const Sample = lazy(() => import('../views/sample-view'));
 const Dashboard = lazy(() => import('../views/dashboard'));
 const AdminSettings = lazy(() => import('../views/admin-settings'));
 const Clusters = lazy(() => import('../views/clusters'));
+const Node = lazy(() => import('../views/nodes'));
 const routeList = {
-    Sample: {
-        path: RouteNames.Sample.path,
-        component: Sample,
-    },
     Dashboard: {
         path: RouteNames.Dashboard.path,
         component: Dashboard,
@@ -20,6 +16,10 @@ const routeList = {
     Clusters: {
         path: RouteNames.Clusters.path,
         component: Clusters,
+    },
+    Nodes: {
+        path: RouteNames.Nodes.path,
+        component: Node,
     }
 };
 export default routeList;

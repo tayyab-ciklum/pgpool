@@ -28330,10 +28330,10 @@ code {
 .ant-form-item-label {
   text-align: left;
 }
-/* .ant-col-14 {
-  text-align: center;
-} */
 .ant-form-item-control-input-content {
   text-align: initial;
+}
+aside {
+  height: 100em;
 }
 

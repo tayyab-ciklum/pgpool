@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { Form, Input, Button, Row, Col, Space, Switch, Select } from 'antd';
 import { setConfig, updateConfig } from '../../redux-sagas/app.action';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { dropDownsData } from '../../utils/constants';
 import { selectClusters } from '../../redux-sagas/app.selector';
+import { useHistory } from 'react-router-dom';
 const layout = {
     labelCol: {
         span: 7,
@@ -14,15 +15,15 @@ const layout = {
 };
 const AdminSettings = (): JSX.Element => {
     const [formRef] = Form.useForm();
+    const History = useHistory();
     const dispatch = useDispatch();
     const clustersInfo = useSelector(
         selectClusters,
         shallowEqual
       ) as any;
-    useEffect(() => {
-        if(clustersInfo.length !== 0) 
-     formRef.setFieldsValue({...clustersInfo[0]});
-      },[dispatch, clustersInfo]);    
+    useMemo(() => {
+     formRef.setFieldsValue(History.location.state);
+      }, [History.location.state]);    
     const getOptions = (type: string) => {
         let res: JSX.Element[] = [];
         const option = Object.values(dropDownsData).find((menu) => menu.key === type)?.value;

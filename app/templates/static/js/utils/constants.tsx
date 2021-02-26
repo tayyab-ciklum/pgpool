@@ -1,7 +1,4 @@
 export const RouteNames = {
-    Sample: {
-        path: '/sample',
-    },
     Dashboard: {
         path: '/',
     },
@@ -11,6 +8,9 @@ export const RouteNames = {
     Clusters: {
         path: '/clusters',
     },
+    Nodes : {
+        path: '/node'
+    }
 };
 export const dropDownsData: { key: string; value: string[] }[] = [
     {

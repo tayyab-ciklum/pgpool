@@ -1,7 +1,4 @@
 export declare const RouteNames: {
-    Sample: {
-        path: string;
-    };
     Dashboard: {
         path: string;
     };
@@ -9,6 +6,9 @@ export declare const RouteNames: {
         path: string;
     };
     Clusters: {
+        path: string;
+    };
+    Nodes: {
         path: string;
     };
 };

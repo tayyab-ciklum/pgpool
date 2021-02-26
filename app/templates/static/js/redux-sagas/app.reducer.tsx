@@ -7,7 +7,7 @@ const INITIAL_STATE = {
     userStatus: true,
     requestError: false,
     requestSuccess: false,
-    clusters: []
+    clusters: null
 };
 const { GET_CURRENT_USER, USER_REQUEST_SUCCESS, USER_REQUEST_FAILURE } = USER_ACTIONS;
 const { REQUEST_ERROR, SET_CLUSTERS, SET_CONFIG_SUCCESS, RESET_REQUEST_STATE} = ADMIN_ACTIONS;

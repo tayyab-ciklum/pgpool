@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { Layout, Menu } from 'antd';
 const { Sider } = Layout;
-import { HomeOutlined, SettingOutlined, ToolOutlined, LaptopOutlined, GoldOutlined , ClusterOutlined} from '@ant-design/icons';
+import { HomeOutlined, ClusterOutlined} from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 import { RouteNames } from '../../utils/constants';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { getClusters } from '../../redux-sagas/app.action';
 import { selectClusters } from '../../redux-sagas/app.selector';
-const { SubMenu } = Menu;
 type Props = {
     collapsed: boolean;
     toggle: () => void;
@@ -15,14 +14,14 @@ type Props = {
 const AppMenu = ({ collapsed, toggle }: Props): JSX.Element => {
     const History = useHistory();
     const dispatch = useDispatch();
-    const clustersInfo = useSelector(
+    const nodesInfo = useSelector(
           selectClusters,
           shallowEqual
         ) as any;
-      useEffect(() => {
-          if(clustersInfo.length == 0)
+      useMemo(() => {
+          if(nodesInfo == null)
           dispatch(getClusters());
-        },[clustersInfo]);
+        },[nodesInfo]);
     return (
         <Sider collapsible collapsed={collapsed} onCollapse={toggle}>
             <div className="logo" />
@@ -30,22 +29,16 @@ const AppMenu = ({ collapsed, toggle }: Props): JSX.Element => {
                 <Menu.Item key="1" icon={<HomeOutlined />} onClick={() => History.push(RouteNames.Dashboard.path)}>
                     Dashboard
                 </Menu.Item>
-                <Menu.Item key="2" icon={< ClusterOutlined/>} onClick={() => History.push(RouteNames.Clusters.path)}>
-                    Clusters
-                </Menu.Item>
-                <Menu.Item key="3" icon={<ToolOutlined />} onClick={() => History.push(RouteNames.AdminSettings.path)}>
-                    Admin settings
-                </Menu.Item>
-                 {clustersInfo.length != 0 ?
-                clustersInfo.map((cluster: any) => cluster.nodes.map((node: any) => {
-                    return (<SubMenu key={"node" + cluster.id + node.id} icon={<GoldOutlined />} title={"Node" + node.id}>
-                    <Menu.Item key="sub1" icon={<LaptopOutlined />}>
-                        Node status
-                    </Menu.Item>
-                    <Menu.Item key="sub2" icon={<SettingOutlined />}>
-                        Settings
-                    </Menu.Item>
-                </SubMenu>)
+                 {nodesInfo != null && nodesInfo.length > 0 ?
+                nodesInfo.map((cluster: any) => cluster.nodes.map((node: any) => {
+                    return (
+                        <Menu.Item key={cluster.id + node.id} icon={<ClusterOutlined />} onClick={() => History.push({
+                            pathname: RouteNames.Nodes.path,
+                            state: cluster
+                        })}>
+                        {"Node" + node.id}
+                    </Menu.Item> 
+                    )
                 })): null}
             </Menu>
         </Sider>

@@ -1,9 +1,5 @@
 /// <reference types="react" />
 declare const routeList: {
-    Sample: {
-        path: string;
-        component: import("react").LazyExoticComponent<() => JSX.Element>;
-    };
     Dashboard: {
         path: string;
         component: import("react").LazyExoticComponent<() => JSX.Element>;
@@ -13,6 +9,10 @@ declare const routeList: {
         component: import("react").LazyExoticComponent<() => JSX.Element>;
     };
     Clusters: {
+        path: string;
+        component: import("react").LazyExoticComponent<() => JSX.Element>;
+    };
+    Nodes: {
         path: string;
         component: import("react").LazyExoticComponent<() => JSX.Element>;
     };
