@@ -2,5 +2,12 @@
     "Dashboard": "Dashboard",
     "Node":"Node",
     "AddNode": "Add Node",
-    "Account": "Postgres Account"
+    "Account": "Postgres Account",
+    "Username": "Username",
+    "Password":"Password",
+    "Hostname":"Hostname",
+    "PortAddress":"Port Address",
+    "Submit":"Submit",
+    "Cancel":"Cancel"
+
 }

@@ -2,5 +2,11 @@
     "Dashboard": "Tableau de bord",
     "Node":"Nœud",
     "AddNode": "Ajouter un nœud",
-    "Account": "Compte Postgres"
+    "Account": "Compte Postgres",
+    "Username": "Nom d'utilisateur",
+    "Password":"le mot de passe",
+    "Hostname":"Nom d'hôte",
+    "PortAddress":"adresse du port",
+    "Submit":"nous faire parvenir",
+    "Cancel":"Annuler"
 }

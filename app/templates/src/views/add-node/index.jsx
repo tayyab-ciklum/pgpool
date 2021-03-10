@@ -1,12 +1,14 @@
 import React from 'react';
 import {Modal, Form, Input, Button } from "antd";
+import { useTranslation } from 'react-i18next';
 const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
+  const { t } = useTranslation();
     const layout = {
         labelCol: {
-          span: 6,
+          span: 7,
         },
         wrapperCol: {
-          span: 18,
+          span: 16,
         },
       };
     const handleOk = () => {
@@ -18,18 +20,18 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
       };
     return (
         <>
-        <Modal title="Add Node" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} 
+        <Modal title={t("AddNode")} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} 
         footer={[
             <Button key="cancel" onClick={() => handleCancel()}>
-              Cancel
+              {t('Cancel')}
             </Button>,
             <Button key="submit" type="primary" onClick={() => handleOk()}>
-              Submit
+             { t('Submit')}
             </Button>,
           ]}>
         <Form   {...layout}>
         <Form.Item
-        label="Username"
+        label= {t('Username')}
         name="username"
         rules={[
           {
@@ -41,7 +43,7 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
         <Input />
       </Form.Item>
       <Form.Item
-        label="Password"
+        label={t('Password')}
         name="password"
         rules={[
           {
@@ -53,7 +55,7 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
         <Input.Password />
       </Form.Item>
       <Form.Item
-        label="Hostname"
+        label={t('Hostname')}
         name="hostname"
         rules={[
           {
@@ -65,7 +67,7 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
         <Input />
       </Form.Item>
       <Form.Item
-        label="Port Address"
+        label={t('PortAddress')}
         name="port"
         rules={[
           {
