@@ -1,0 +1,13 @@
+export const ActionTypes = {
+  NODES_ACTIONS: {
+    GET_NODES: "GET_NODES",
+    SET_NODES: "SET_NODES",
+  },
+  REQUEST_ACTIONS: {
+    REQUEST_SUCCESS: "REQUEST_SUCCESS",
+    REQUEST_FAILURE: "REQUEST_FAILURE",
+    RESET_REQUEST: "RESET_REQUEST"
+  },
+};
+
+export default ActionTypes;
