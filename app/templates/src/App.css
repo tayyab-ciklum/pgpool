@@ -1,0 +1,78 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo {
+  height: 48px;
+  background-image: url("./assets/images/logo-pgpool.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 16px 0px;
+}
+.sideMenu {
+  margin: 24px 16px;
+}
+.ant-form-item-label {
+  text-align: left;
+}
+.ant-form-item-control-input-content {
+  text-align: initial;
+}
+aside.ant-layout-sider.ant-layout-sider-dark.ant-layout-sider-has-trigger {
+  height: 100vh !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1001;
+}
+.header {
+  padding: 0;
+}
+.ant-layout-header {
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  left: 0;
+}
+.site-layout .site-layout-background {
+  padding-left: 224px !important;
+  padding-top: 90px !important;
+  transition: all 0.2s ease-in-out;
+}
+.ant-layout-sider.ant-layout-sider-dark.ant-layout-sider-collapsed.ant-layout-sider-has-trigger
+  ~ .ant-layout.site-layout
+  .site-layout-background {
+  padding-left: 104px !important;
+}
