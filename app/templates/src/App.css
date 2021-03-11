@@ -49,9 +49,30 @@
 .ant-form-item-control-input-content {
   text-align: initial;
 }
-aside {
-  height: 100em;
+aside.ant-layout-sider.ant-layout-sider-dark.ant-layout-sider-has-trigger {
+  height: 100vh !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1001;
 }
 .header {
   padding: 0;
+}
+.ant-layout-header {
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  left: 0;
+}
+.site-layout .site-layout-background {
+  padding-left: 224px !important;
+  padding-top: 90px !important;
+  transition: all 0.2s ease-in-out;
+}
+.ant-layout-sider.ant-layout-sider-dark.ant-layout-sider-collapsed.ant-layout-sider-has-trigger
+  ~ .ant-layout.site-layout
+  .site-layout-background {
+  padding-left: 104px !important;
 }
