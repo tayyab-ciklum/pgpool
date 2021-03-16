@@ -76,3 +76,6 @@ aside.ant-layout-sider.ant-layout-sider-dark.ant-layout-sider-has-trigger {
   .site-layout-background {
   padding-left: 104px !important;
 }
+.ant-space.ant-space-horizontal.ant-space-align-center {
+  float: right;
+}

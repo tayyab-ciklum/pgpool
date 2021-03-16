@@ -1,16 +1,7 @@
 import React from 'react';
-import { Form, Input, Button, Row, Col, Space, Switch, Select } from 'antd';
+import { Form, Input, Row, Col, Switch, Select } from 'antd';
 import { dropDownsData } from '../../../utils/constants';
-const layout = {
-    labelCol: {
-        span: 7,
-    },
-    wrapperCol: {
-        span: 14,
-    },
-};
 const AdminSettings = () => {
-    const [formRef] = Form.useForm();  
     const getOptions = (type) => {
         let res = [];
         const option = Object.values(dropDownsData).find((menu) => menu.key === type)?.value;
@@ -22,18 +13,9 @@ const AdminSettings = () => {
             ));
         return res;
     };
-    const handleSubmit = () => {
-    };
     return (
         <div>
             <h3>PG Pool Admin Settings</h3>
-            <Form
-                colon={false}
-                initialValues={{ pcpRefreshTime: 1, shutdownMode: 'Smart', language: 'English', debugMode: false, clearQueryCache: false, demonMode: false  }}
-                {...layout}
-                form={formRef}
-                onFinish={handleSubmit}
-            >
                 <Row>
                     <Col span={12}>
                         <Form.Item
@@ -225,13 +207,6 @@ const AdminSettings = () => {
                         </Form.Item>
                     </Col>
                 </Row>
-                <Space style={{ marginLeft: '42%' }}>
-                    <Button type="primary" htmlType="submit">
-                        Submit
-                    </Button>
-                    <Button>Cancel</Button>
-                </Space>
-            </Form>
         </div>
     );
 };
