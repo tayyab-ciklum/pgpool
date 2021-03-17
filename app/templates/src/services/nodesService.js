@@ -3,7 +3,7 @@ import { adminApi } from "../config/urls";
 
 export const getNodes = () => {
   return request({
-    url: adminApi.getNodes(),
+    url: adminApi.getDummyNodes(),
     method: "GET",
   })
     .then((response) => response)

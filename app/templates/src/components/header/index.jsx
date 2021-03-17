@@ -30,5 +30,3 @@ const AppHeader = () => {
     );
 };
 export default AppHeader;
-
-  {/* <Button type="text" icon={<BellOutlined style={{ color: 'white', fontSize: '20px' }}/>} style={{paddingRight: "8px"}}/> */}
