@@ -15,7 +15,7 @@ const SideMenu = () => {
   const { t } = useTranslation();
     return (
     <Dropdown overlay={menu} placement="topRight">
-    <Button type='text' style={{float:"right", color: '#ffffff'}} onClick={e => e.preventDefault()}>
+    <Button type='text' style={{color: '#ffffff'}} onClick={e => e.preventDefault()}>
      {t('Account')}<DownOutlined />
     </Button>
   </Dropdown>
