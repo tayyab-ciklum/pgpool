@@ -8,5 +8,8 @@
     "Hostname":"Nom d'hôte",
     "PortAddress":"adresse du port",
     "Submit":"nous faire parvenir",
-    "Cancel":"Annuler"
+    "Cancel":"Annuler",
+    "Statistics": "statistiques",
+    "Analytics":"Analytique",
+    "Update":"mettre à jour"
 }

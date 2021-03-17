@@ -8,6 +8,9 @@
     "Hostname":"Hostname",
     "PortAddress":"Port Address",
     "Submit":"Submit",
-    "Cancel":"Cancel"
+    "Cancel":"Cancel",
+    "Statistics": "Statistics",
+    "Analytics":"Analytics",
+    "Update":"Update"
 
 }
