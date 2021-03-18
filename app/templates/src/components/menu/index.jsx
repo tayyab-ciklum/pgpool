@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { HomeOutlined, ClusterOutlined} from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
@@ -12,28 +12,35 @@ const AppMenu = ({ collapsed, toggle }) => {
     const History = useHistory();
     const dispatch =  useDispatch();
     const { t } = useTranslation();
-    const nodesdisplayInfo = useSelector(
+    const [selectedTab, changeSelectedTab] = useState('0');
+    const nodesdisplayInfo =useSelector(
       nodes,
       shallowEqual
     );
   useEffect(() => {
+      if(History.location.state)
+      changeSelectedTab(History.location.state);
       if(nodesdisplayInfo == null)
       dispatch(getNodes());
     },[nodesdisplayInfo, dispatch]);
     return (
         <Sider collapsible collapsed={collapsed} onCollapse={toggle}>
             <div className="logo" />
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                <Menu.Item key="1D" icon={<HomeOutlined />} onClick={() => History.push(RouteNames.Dashboard.path)}>
+            <Menu theme="dark" mode="inline" selectedKeys={[selectedTab.toString()]} defaultSelectedKeys={['0']}>
+                <Menu.Item key="0" icon={<HomeOutlined />} onClick={() =>{
+                     changeSelectedTab('0');
+                     History.push(RouteNames.Dashboard.path)}}>
                     {t('Dashboard')}
                 </Menu.Item>
                  {nodesdisplayInfo != null && nodesdisplayInfo.length > 0 ?
                 nodesdisplayInfo.map((node) => {
                     return (
-                        <Menu.Item key={node.id} icon={<ClusterOutlined />} onClick={() => History.push({
+                        <Menu.Item key={node.id} icon={<ClusterOutlined />} onClick={() =>{ 
+                            changeSelectedTab(node.id);
+                            History.push({
                             pathname: RouteNames.Nodes.path,
                             state: node.id
-                        })}>
+                        })}}>
                       {node.name}
                     </Menu.Item> 
                     )

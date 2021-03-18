@@ -14,7 +14,6 @@ const AppContent = ()=> {
     
     const menuItems = Object.values(dropDownsData).find((menu) => menu.key === 'Language')?.value;
     menuItems.map(langauge => languageDropdown.push(<Option key={langauge} value={langauge}>{t(`${langauge}`)}</Option>));
-    console.log('lng', languageDropdown);
     return (
         <Content
             className="site-layout-background"
