@@ -9,13 +9,11 @@ import { Provider } from 'react-redux';
 import AppStore from './redux/app-store'
 
 ReactDOM.render(
-  <React.StrictMode>
     <Provider store={AppStore}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-      </Provider>
-      </React.StrictMode>,
+      </Provider>,
   document.getElementById('root')
 );
 serviceWorker.unregister();

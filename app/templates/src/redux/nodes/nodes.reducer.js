@@ -4,11 +4,12 @@ const { NODES_ACTIONS, REQUEST_ACTIONS } = ActionTypes;
 const INITIAL_STATE = {
   nodes: null,
   success: false,
-  failure: false
+  failure: false,
+  inprogressRequest: false
 };
 
 const { SET_NODES } = NODES_ACTIONS;
-const { REQUEST_SUCCESS, REQUEST_FAILURE, RESET_REQUEST } = REQUEST_ACTIONS;
+const { REQUEST_SUCCESS, REQUEST_FAILURE, RESET_REQUEST, REQUEST_INPROGRESS } = REQUEST_ACTIONS;
 const NodesReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
   switch (type) {
@@ -34,6 +35,11 @@ const NodesReducer = (state = INITIAL_STATE, action) => {
           success: false,
           failure: false
         };
+    case REQUEST_INPROGRESS:
+          return {
+            ...state,
+            inprogressRequest: true
+          };
     default:
       return state;
   }
