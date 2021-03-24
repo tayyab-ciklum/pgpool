@@ -4,12 +4,13 @@
     "AddNode": "Ajouter un nœud",
     "Account": "Compte Postgres",
     "Username": "Nom d'utilisateur",
-    "Password":"le mot de passe",
+    "Password":"Le mot de passe",
     "Hostname":"Nom d'hôte",
-    "PortAddress":"adresse du port",
-    "Submit":"nous faire parvenir",
+    "PortAddress":"Adresse du port",
+    "Submit":"Nous faire parvenir",
     "Cancel":"Annuler",
-    "Statistics": "statistiques",
+    "Statistics": "Statistiques",
     "Analytics":"Analytique",
-    "Update":"mettre à jour"
+    "Update":"Mettre à jour",
+    "AddingNode":"Ajout d'un nœud"
 }

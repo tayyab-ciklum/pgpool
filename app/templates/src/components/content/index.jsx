@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select,  Layout, Progress } from 'antd';
+import { Select,  Layout } from 'antd';
 import Routes from '../../routes';
 import { dropDownsData, LANGUAGE } from '../../utils/constants';
 import { useTranslation } from 'react-i18next';
@@ -30,7 +30,7 @@ const AppContent = ()=> {
       <Select defaultValue={LANGUAGE} style={{float:"right", marginLeft:'2px'}} onChange={(value) => {changeLanguage(value)}}>
        {languageDropdown}
       </Select>
-      {requestStatus ?  <ProgressBar title ='Adding Node' /> : null}
+      {requestStatus ?  <ProgressBar title ={t('AddingNode')} /> : null}
             <Routes />
         </Content>
     );
