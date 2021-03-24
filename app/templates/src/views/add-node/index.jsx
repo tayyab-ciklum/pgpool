@@ -36,8 +36,12 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
         rules={[
           {
             required: true,
-            message: 'Required',
+            message: 'Required'
           },
+          {
+            pattern: RegExp(/^\S*$/),
+            message: 'Space not allowed',
+        }
         ]}
       >
         <Input />
@@ -49,7 +53,11 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
           {
             required: true,
             message: 'Required',
-          },
+          }, 
+          {
+            pattern: RegExp(/^\S*$/),
+            message: 'Space not allowed',
+          }
         ]}
       >
         <Input.Password />
@@ -62,6 +70,10 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
             required: true,
             message: 'Required',
           },
+          {
+            pattern: RegExp(/^\S*$/),
+            message: 'Space not allowed',
+        }
         ]}
       >
         <Input />
@@ -74,6 +86,14 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
             required: true,
             message: 'Required',
           },
+          {
+            pattern: RegExp(/^\S*$/),
+            message: 'Space not allowed',
+        },
+        {
+            pattern: new RegExp('^[0-9]*$'),
+            message: 'Only numbers allowed',
+        }
         ]}
       >
         <Input />
