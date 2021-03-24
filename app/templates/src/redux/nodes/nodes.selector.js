@@ -6,3 +6,7 @@ export const nodes = createSelector(
   [appData],
   (data) => data.nodes
 );
+export const nodeInProgress = createSelector(
+  [appData],
+  (data) => data.inprogressRequest
+);

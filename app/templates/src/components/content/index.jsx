@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { Select,  Layout, notification, Progress } from 'antd';
+import React from 'react';
+import { Select,  Layout, Progress } from 'antd';
 import Routes from '../../routes';
 import { dropDownsData, LANGUAGE } from '../../utils/constants';
 import { useTranslation } from 'react-i18next';
+import ProgressBar from '../progressBar';
+import {nodeInProgress} from '../../redux/nodes/nodes.selector';
+import { shallowEqual, useSelector } from 'react-redux';
 const { Content } = Layout;
 const AppContent = ()=> {
     const { t, i18n } = useTranslation();
-    const [progress, setProgress] = useState(0);
-    setTimeout(() => {
-        if(progress < 95){
-            setProgress(progress+3);
-        }
-    }, 3000);
+    const requestStatus = useSelector(
+        nodeInProgress,
+        shallowEqual
+      );
     const { Option } = Select;
     let languageDropdown = [];
     const changeLanguage = (language) => {
@@ -29,9 +30,7 @@ const AppContent = ()=> {
       <Select defaultValue={LANGUAGE} style={{float:"right", marginLeft:'2px'}} onChange={(value) => {changeLanguage(value)}}>
        {languageDropdown}
       </Select>
-      <div style={{width:'25%', padding:'5px',position: 'fixed', bottom: '0', right:'0'}}>
-      <Progress percent={progress} size="small" status="active" />
-      </div>
+      {requestStatus ?  <ProgressBar title ='Adding Node' /> : null}
             <Routes />
         </Content>
     );
