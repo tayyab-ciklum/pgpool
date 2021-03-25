@@ -8,7 +8,7 @@ const INITIAL_STATE = {
   inprogressRequest: false
 };
 
-const { SET_NODES } = NODES_ACTIONS;
+const { SET_NODES, ADD_NODE_SUCCESS } = NODES_ACTIONS;
 const { REQUEST_SUCCESS, REQUEST_FAILURE, RESET_REQUEST, REQUEST_INPROGRESS } = REQUEST_ACTIONS;
 const NodesReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
@@ -22,12 +22,14 @@ const NodesReducer = (state = INITIAL_STATE, action) => {
     case REQUEST_SUCCESS:
       return {
         ...state,
-        success: true
+        success: true,
+        inprogressRequest: false
       };
     case REQUEST_FAILURE:
       return {
         ...state,
-        failure: true
+        failure: true,
+        inprogressRequest: false
       };
     case RESET_REQUEST:
         return {
@@ -40,6 +42,12 @@ const NodesReducer = (state = INITIAL_STATE, action) => {
             ...state,
             inprogressRequest: true
           };
+   case ADD_NODE_SUCCESS:
+            return {
+              ...state,
+              inprogressRequest: false,
+              success: true
+            };
     default:
       return state;
   }

@@ -22,11 +22,11 @@ import {
     }
   }
   function* addNode(node) {
-    debugger
     yield put(actions.ResetRequest());
     try {
-      const result = yield call(api.addNode(node));
       yield put(actions.RequestInProgress());
+      const result = yield call(api.addNode, node.payload);
+      yield put(actions.AddNodeSuccess(result));
     } catch (e) {
       yield put(actions.RequestFailure());
     }

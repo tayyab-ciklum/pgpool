@@ -3,8 +3,9 @@ import { Progress } from 'antd';
 const ProgressBar = ({title}) => {
     const [progress, setProgress] = useState(0);
     setTimeout(() => {
+        const rand = 1 + Math.random() * (10 - 1);
         if(progress < 95){
-            setProgress(progress+3);
+            setProgress(progress+ Math.floor(rand));
         }
     }, 3000);
     return (

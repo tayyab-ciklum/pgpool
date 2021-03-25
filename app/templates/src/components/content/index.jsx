@@ -4,13 +4,22 @@ import Routes from '../../routes';
 import { dropDownsData, LANGUAGE } from '../../utils/constants';
 import { useTranslation } from 'react-i18next';
 import ProgressBar from '../progressBar';
-import {nodeInProgress} from '../../redux/nodes/nodes.selector';
+import {nodeInProgress, error, success} from '../../redux/nodes/nodes.selector';
 import { shallowEqual, useSelector } from 'react-redux';
+import popUp from '../popup';
 const { Content } = Layout;
 const AppContent = ()=> {
     const { t, i18n } = useTranslation();
     const requestStatus = useSelector(
         nodeInProgress,
+        shallowEqual
+      );
+    const errorStatus = useSelector(
+        error,
+        shallowEqual
+      );
+    const successStatus = useSelector(
+        success,
         shallowEqual
       );
     const { Option } = Select;
@@ -31,6 +40,8 @@ const AppContent = ()=> {
        {languageDropdown}
       </Select>
       {requestStatus ?  <ProgressBar title ={t('AddingNode')} /> : null}
+      {errorStatus ? popUp('error', 'Error', 'Unexpected Error!'): null}
+      {successStatus ? popUp('success','Success', 'Request handled Successfully'): null}
             <Routes />
         </Content>
     );

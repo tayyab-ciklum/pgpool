@@ -5,7 +5,6 @@ const popUp = (notificationType, title, message) => {
       type: notificationType,
       placement: 'bottomRight',
       description: message,
-      duration: 0
     });
   };
 export default popUp;

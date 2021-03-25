@@ -13,7 +13,7 @@ export const getNodes = () => {
 };
 export const addNode = (nodeData) => {
   return request({
-    url: adminApi.addNode(),
+    url: adminApi.postDummyNode(),
     method: "POST",
     data: nodeData
   })

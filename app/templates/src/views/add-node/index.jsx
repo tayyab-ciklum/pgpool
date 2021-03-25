@@ -17,10 +17,12 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
       };
     const handleOk = () => {
         dispatch(AddNode(formRef.getFieldsValue()));
+        formRef.resetFields();
         setIsModalVisible(false);
       };
     
       const handleCancel = () => {
+        formRef.resetFields();
         setIsModalVisible(false);
       };
     return (

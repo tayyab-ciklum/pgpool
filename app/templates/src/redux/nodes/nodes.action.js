@@ -2,7 +2,8 @@ import ActionTypes from "../action-types";
 const {
     GET_NODES,
     SET_NODES,
-    ADD_NODE
+    ADD_NODE,
+    ADD_NODE_SUCCESS
 } = ActionTypes.NODES_ACTIONS;
 const {
 RESET_REQUEST,
@@ -33,4 +34,8 @@ export const AddNode = (node) => ({
 });
 export const RequestInProgress = () => ({
     type: REQUEST_INPROGRESS
+});
+export const AddNodeSuccess = (result) => ({
+    type: ADD_NODE_SUCCESS,
+    payload: result
 });
