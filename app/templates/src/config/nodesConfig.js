@@ -11,5 +11,5 @@ export const nodesInfo = [
         key: 2,
         name: 'Analytics',
         Component: <div>Coming soon</div>,
-    },
+    }
 ];

@@ -4,6 +4,7 @@ import { nodeSettingsConfig } from "../../config/nodeSettingsConfig";
 import AdminSettings from "../setting-groups/admin-settings";
 import NodeSettingsHeader from "./header";
 import CustomSettings from "../setting-groups/custom-settings";
+import {useLocation} from 'react-router-dom';
 const { Panel } = Collapse;
 const layout = {
     labelCol: {
@@ -14,11 +15,13 @@ const layout = {
     },
 };
 const NodeSettings = () => {
+    const location = useLocation();
+    const [formRef] = Form.useForm(); 
     const UIcomponents = {
         "Admin Settings": AdminSettings,
         "Custom Settings": CustomSettings
-    };
-    const [formRef] = Form.useForm();  
+    }; 
+    const nodeId = location.state;
     const panels = [];
     let formDetails = {};
     Object.values(nodeSettingsConfig).map((node) => {
@@ -28,7 +31,9 @@ const NodeSettings = () => {
         key={node.key}><SpecificSection/></Panel>)});
         useEffect (() => {
             formRef.setFieldsValue(formDetails);
-        });
+            //TODO GET call for setting of each Node
+            console.log('Put the Get call for every node', nodeId);
+        },[location, formDetails, formRef, nodeId]);
         const handleSubmit = () => {
             console.log('inside main form', formRef.getFieldsValue());
         };

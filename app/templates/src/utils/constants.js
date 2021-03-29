@@ -9,7 +9,8 @@ export const RouteNames = {
         path: '/clusters',
     },
     Nodes : {
-        path: '/node'
+        path: '/node/:id',
+        link: '/node'
     }
 };
 export const dropDownsData = [

@@ -22,7 +22,7 @@ const AppMenu = ({ collapsed, toggle }) => {
       changeSelectedTab(History.location.state);
       if(nodesdisplayInfo == null)
       dispatch(getNodes());
-    },[nodesdisplayInfo, dispatch]);
+    },[nodesdisplayInfo, History.location.state, dispatch]);
     return (
         <Sider collapsible collapsed={collapsed} onCollapse={toggle}>
             <div className="logo" />
@@ -38,7 +38,7 @@ const AppMenu = ({ collapsed, toggle }) => {
                         <Menu.Item key={node.id} icon={<ClusterOutlined />} onClick={() =>{ 
                             changeSelectedTab(node.id);
                             History.push({
-                            pathname: RouteNames.Nodes.path,
+                            pathname:`${RouteNames.Nodes.link}/${node.id}`,
                             state: node.id
                         })}}>
                       {node.name}
