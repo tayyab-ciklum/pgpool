@@ -2,7 +2,6 @@ import { lazy } from 'react';
 import { RouteNames } from '../utils/constants';
 const Dashboard = lazy(() => import('../views/dashboard'));
 const AdminSettings = lazy(() => import('../views/setting-groups/admin-settings'));
-// const Clusters = lazy(() => import('../views/clusters'));
 const Node = lazy(() => import('../views/nodes'));
 const routeList = {
     Dashboard: {

@@ -1,15 +1,18 @@
 import React from 'react';
-import { Layout,Avatar, Space, Button, Badge, Menu, Dropdown } from 'antd';
+import { Layout,Avatar, Space, Button, Badge, Menu, Dropdown, Divider } from 'antd';
 import SideMenu from './sideMenu';
 import { UserOutlined, BellOutlined } from "@ant-design/icons";
 const { Header } = Layout;
 const menu = (
-    <Menu>
-      <Menu.Item>
-        <p>
-         Coming soon !!
-        </p>
-      </Menu.Item>
+    <Menu style={{padding: '14px'}}>
+      <h4>Notifications</h4>
+      <Divider style={{margin: '0'}}/>
+      <ul style={{listStyle: 'none', padding:'5px'}}>
+        <Space direction='vertical'>
+        <li>menu item dummy data</li>
+        <li>menu item dummy data</li>
+        </Space>
+      </ul>
     </Menu>
   );
 const AppHeader = () => {
@@ -30,5 +33,3 @@ const AppHeader = () => {
     );
 };
 export default AppHeader;
-
-  {/* <Button type="text" icon={<BellOutlined style={{ color: 'white', fontSize: '20px' }}/>} style={{paddingRight: "8px"}}/> */}
