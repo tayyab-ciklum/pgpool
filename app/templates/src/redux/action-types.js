@@ -12,6 +12,9 @@ export const ActionTypes = {
     RESET_REQUEST: "RESET_REQUEST",
     REQUEST_INPROGRESS: "INPROGRESS_REQUEST"
   },
+  NOTIFICATION_ACTIONS: {
+    ADD_NOTIFICATION:"ADD_NOTIFICATION"
+  }
 };
 
 export default ActionTypes;

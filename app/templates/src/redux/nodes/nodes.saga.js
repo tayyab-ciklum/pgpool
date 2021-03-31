@@ -7,6 +7,7 @@ import {
   
   import * as api from "../../services/nodesService";
   import * as actions from "./nodes.action";
+  import * as notifications from '../notifications/notifications.action';
   import ActionTypes from "../action-types";
   const {
     GET_NODES,
@@ -26,7 +27,7 @@ import {
     try {
       yield put(actions.RequestInProgress());
       const result = yield api.addNode(node.payload);
-      debugger
+      yield put(notifications.AddNotification('New node with name' + node.payload.name + 'has been added'));
       yield put(actions.AddNodeSuccess(result));
     } catch (e) {
       yield put(actions.AddNodeFailure());

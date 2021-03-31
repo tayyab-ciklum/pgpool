@@ -2,6 +2,8 @@ import React from 'react';
 import { Layout,Avatar, Space, Button, Badge, Menu, Dropdown } from 'antd';
 import SideMenu from './sideMenu';
 import { UserOutlined, BellOutlined } from "@ant-design/icons";
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import {notificationsData} from '../../redux/notifications/notifications.selector';
 const { Header } = Layout;
 const menu = (
     <Menu style={{padding: '14px'}}>
@@ -15,6 +17,11 @@ const menu = (
     </Menu>
   );
 const AppHeader = () => {
+    const notificationsDescription =useSelector(
+      notificationsData,
+      shallowEqual
+    );
+    console.log('notifi', notificationsDescription);
     return (
         <Header className="header">
         <Space direction='horizontal' >
