@@ -25,9 +25,10 @@ import {
   function* addNode(node) {
     yield put(actions.ResetRequest());
     try {
+      yield put(notifications.AddNotification({title:'AddNodeInProgress',icon:'inprogress'}));
       yield put(actions.RequestInProgress());
       const result = yield api.addNode(node.payload);
-      yield put(notifications.AddNotification('New node with name' + node.payload.name + 'has been added'));
+      yield put(notifications.AddNotification({title:'AddNodeSuccess', icon:'success'}));
       yield put(actions.AddNodeSuccess(result));
     } catch (e) {
       yield put(actions.AddNodeFailure());

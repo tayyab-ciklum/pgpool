@@ -12,6 +12,10 @@
     "Statistics": "Statistics",
     "Analytics":"Analytics",
     "Update":"Update",
-    "AddingNode":"Adding Node"
+    "AddingNode":"Adding Node",
+    "Notifications":"Notifications",
+    "NoNotifications":"No notifications yet to display ",
+    "AddNodeInProgress":"New node will be added soon ... ",
+    "AddNodeSuccess":"New node has been added "
 
 }

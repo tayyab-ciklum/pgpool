@@ -12,5 +12,9 @@
     "Statistics": "Statistiques",
     "Analytics":"Analytique",
     "Update":"Mettre à jour",
-    "AddingNode":"Ajout d'un nœud"
+    "AddingNode":"Ajout d'un nœud",
+    "Notifications":"Notifications",
+    "NoNotifications":"Aucune notification à afficher pour le moment ",
+    "AddNodeInProgress":"Un nouveau nœud sera bientôt ajouté ... ",
+    "AddNodeSuccess":"Un nouveau nœud a été ajouté "
 }
