@@ -3,7 +3,8 @@ const {
     GET_NODES,
     SET_NODES,
     ADD_NODE,
-    ADD_NODE_SUCCESS
+    ADD_NODE_SUCCESS,
+    ADD_NODE_FAILURE
 } = ActionTypes.NODES_ACTIONS;
 const {
 RESET_REQUEST,
@@ -38,4 +39,7 @@ export const RequestInProgress = () => ({
 export const AddNodeSuccess = (result) => ({
     type: ADD_NODE_SUCCESS,
     payload: result
+});
+export const AddNodeFailure = () => ({
+    type: ADD_NODE_FAILURE
 });

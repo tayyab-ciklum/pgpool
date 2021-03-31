@@ -25,10 +25,11 @@ import {
     yield put(actions.ResetRequest());
     try {
       yield put(actions.RequestInProgress());
-      const result = yield call(api.addNode, node.payload);
+      const result = yield api.addNode(node.payload);
+      debugger
       yield put(actions.AddNodeSuccess(result));
     } catch (e) {
-      yield put(actions.RequestFailure());
+      yield put(actions.AddNodeFailure());
     }
   }
   
