@@ -1,16 +1,15 @@
 import React from 'react';
-import { Layout,Avatar, Space, Button, Badge, Menu, Dropdown, Divider } from 'antd';
+import { Layout,Avatar, Space, Button, Badge, Menu, Dropdown } from 'antd';
 import SideMenu from './sideMenu';
 import { UserOutlined, BellOutlined } from "@ant-design/icons";
 const { Header } = Layout;
 const menu = (
     <Menu style={{padding: '14px'}}>
-      <h4>Notifications</h4>
-      <Divider style={{margin: '0'}}/>
+      <h4 style={{borderBottom: '1px solid gray'}}>Notifications</h4>
       <ul style={{listStyle: 'none', padding:'5px'}}>
         <Space direction='vertical'>
-        <li>menu item dummy data</li>
-        <li>menu item dummy data</li>
+        <li key='1'>menu item dummy data</li>
+        <li key='2'>menu item dummy data</li>
         </Space>
       </ul>
     </Menu>
