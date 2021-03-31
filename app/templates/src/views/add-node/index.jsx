@@ -1,8 +1,12 @@
 import React from 'react';
 import {Modal, Form, Input, Button } from "antd";
 import { useTranslation } from 'react-i18next';
+import {useDispatch} from 'react-redux';
+import {AddNode} from '../../redux/nodes/nodes.action';
 const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const [formRef] = Form.useForm(); 
     const layout = {
         labelCol: {
           span: 7,
@@ -12,14 +16,16 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
         },
       };
     const handleOk = () => {
+        dispatch(AddNode(formRef.getFieldsValue()));
+        formRef.resetFields();
         setIsModalVisible(false);
       };
     
       const handleCancel = () => {
+        formRef.resetFields();
         setIsModalVisible(false);
       };
     return (
-        <>
         <Modal title={t("AddNode")} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} 
         footer={[
             <Button key="cancel" onClick={() => handleCancel()}>
@@ -29,15 +35,22 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
              { t('Submit')}
             </Button>,
           ]}>
-        <Form   {...layout}>
+        <Form
+           form={formRef}
+           {...layout}
+           >
         <Form.Item
         label= {t('Username')}
         name="username"
         rules={[
           {
             required: true,
-            message: 'Required',
+            message: 'Required'
           },
+          {
+            pattern: RegExp(/^\S*$/),
+            message: 'Space not allowed',
+        }
         ]}
       >
         <Input />
@@ -49,7 +62,11 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
           {
             required: true,
             message: 'Required',
-          },
+          }, 
+          {
+            pattern: RegExp(/^\S*$/),
+            message: 'Space not allowed',
+          }
         ]}
       >
         <Input.Password />
@@ -62,6 +79,10 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
             required: true,
             message: 'Required',
           },
+          {
+            pattern: RegExp(/^\S*$/),
+            message: 'Space not allowed',
+        }
         ]}
       >
         <Input />
@@ -74,13 +95,20 @@ const AddNodeModal = ({isModalVisible, setIsModalVisible}) => {
             required: true,
             message: 'Required',
           },
+          {
+            pattern: RegExp(/^\S*$/),
+            message: 'Space not allowed',
+        },
+        {
+            pattern: new RegExp('^[0-9]*$'),
+            message: 'Only numbers allowed',
+        }
         ]}
       >
         <Input />
       </Form.Item>
         </Form>
       </Modal>
-        </>
     );
 };
 export default AddNodeModal;

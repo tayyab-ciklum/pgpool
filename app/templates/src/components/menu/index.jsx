@@ -20,7 +20,7 @@ const AppMenu = ({ collapsed, toggle }) => {
   useEffect(() => {
       if(History.location.state)
       changeSelectedTab(History.location.state);
-      if(nodesdisplayInfo == null)
+      if(nodesdisplayInfo.length === 0)
       dispatch(getNodes());
     },[nodesdisplayInfo, History.location.state, dispatch]);
     return (
